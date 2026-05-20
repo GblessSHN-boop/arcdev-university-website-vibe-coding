@@ -119,7 +119,7 @@ const facultiesEn = facultiesId.map((faculty) => ({
 const rectorId = {
   name: "Gland Jermano Blessed Siahaan, S.Kom., M.Kom., Ph.D., S.H., S.Ds., S.Psi., S.T.",
   role: "Rektor Universitas ARCDEV",
-  photo: "/images/people/rector-gland-siahaan.png",
+  photo: "/images/people/rector-gland-siahaan-cropped.png",
   summary: "Rektor multidisipliner yang memadukan sistem informasi, teknik informatika, artificial intelligence, hukum digital, desain komunikasi visual, psikologi, dan teknik. Kepemimpinannya menempatkan ARCDEV sebagai universitas teknologi kreatif yang menghubungkan coding, design, intelligence, dan global innovation.",
   education: [
     "S1 Sistem Informasi, UASN Universitas Advent Surya Nusantara",
@@ -184,9 +184,9 @@ export const homepageContent = {
     cta: "Daftar Sekarang",
     ctaHref: "/id#admissions",
     hero: {
-      eyebrow: "BUILD THE FUTURE THROUGH CODE, DESIGN, INTELLIGENCE, AND INNOVATION",
+      eyebrow: "CODE, DESIGN, INTELLIGENCE, INNOVATION",
       code: "01",
-      titleLines: ["Kampus", "Teknologi Kreatif", "untuk Generasi", "Masa Depan."],
+      titleLines: ["Universitas ARCDEV", "Kampus Teknologi Kreatif", "untuk Generasi Masa Depan."],
       lead: "Universitas ARCDEV dirancang sebagai ekosistem pendidikan tinggi berbasis teknologi, desain, artificial intelligence, industri kreatif, bisnis digital, dan inovasi global.",
       primary: "Mulai Pendaftaran",
       secondary: "Lihat Fakultas",
@@ -237,9 +237,9 @@ export const homepageContent = {
     cta: "Apply Now",
     ctaHref: "/en#admissions",
     hero: {
-      eyebrow: "BUILD THE FUTURE THROUGH CODE, DESIGN, INTELLIGENCE, AND INNOVATION",
+      eyebrow: "CODE, DESIGN, INTELLIGENCE, INNOVATION",
       code: "01",
-      titleLines: ["A Creative", "Technology Campus", "for Future", "Innovators."],
+      titleLines: ["ARCDEV University", "Creative Technology Campus", "for Future Innovators."],
       lead: "ARCDEV University is designed as a higher education ecosystem for technology, design, artificial intelligence, creative industry, digital business, and global innovation.",
       primary: "Start Admission",
       secondary: "Explore Faculties",
@@ -276,3 +276,5 @@ export const homepageContent = {
     }
   }
 };
+
+

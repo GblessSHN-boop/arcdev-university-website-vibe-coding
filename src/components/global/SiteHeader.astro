@@ -3,12 +3,18 @@ const { content } = Astro.props;
 
 const otherLangHref = content.lang === "id" ? "/en" : "/id";
 const otherLangLabel = content.lang === "id" ? "EN" : "ID";
+const brandName = content.lang === "id" ? "Universitas ARCDEV" : "ARCDEV University";
+const brandMeta = content.lang === "id" ? "Creative Technology University" : "Creative Technology University";
 ---
 
 <header class="site-header" data-site-header>
   <div class="container header-inner">
-    <a class="brand" href={`/${content.lang}`} aria-label="ARCDEV University">
+    <a class="brand" href={`/${content.lang}`} aria-label={brandName}>
       <img class="brand-logo" src="/images/brand/arcdev-logo.png" alt="ARCDEV University logo" />
+      <span class="brand-text">
+        <strong>{brandName}</strong>
+        <small>{brandMeta}</small>
+      </span>
     </a>
 
     <nav class="site-nav" aria-label="Main navigation">

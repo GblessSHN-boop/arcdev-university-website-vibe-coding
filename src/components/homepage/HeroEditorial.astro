@@ -1,11 +1,14 @@
 ﻿---
 const { content } = Astro.props;
 const hero = content.hero;
+const universityName = content.lang === "id" ? "Universitas ARCDEV" : "ARCDEV University";
 ---
 
 <section class="hero-v2" id="about">
   <div class="container hero-v2-grid">
     <div class="hero-v2-copy">
+      <p class="hero-university-name" data-reveal>{universityName}</p>
+
       <div class="section-code">
         <span>{hero.code}</span>
         <strong>{hero.eyebrow}</strong>
@@ -30,7 +33,7 @@ const hero = content.hero;
       <p>{hero.panelMeta}</p>
       <h2>{hero.panelTitle}</h2>
       <span>{hero.panelText}</span>
-      <a href={`/${content.lang}#admissions`}>{hero.panelAction}</a>
+      <a href={`/${content.lang}#faculties`}>{hero.panelAction}</a>
     </aside>
   </div>
 </section>

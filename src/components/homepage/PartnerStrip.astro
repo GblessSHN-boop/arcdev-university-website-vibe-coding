@@ -1,0 +1,80 @@
+﻿---
+const { content } = Astro.props;
+
+const title = content.lang === "id"
+  ? "Ekosistem Industri Teknologi"
+  : "Technology Industry Ecosystem";
+
+const subtitle = content.lang === "id"
+  ? "ARCDEV diarahkan untuk menghubungkan pembelajaran, riset, desain produk digital, cloud, AI, data, software engineering, infrastruktur, dan ekosistem teknologi global."
+  : "ARCDEV is designed to connect learning, research, digital product design, cloud, AI, data, software engineering, infrastructure, and global technology ecosystems.";
+
+const partners = [
+  { name: "Microsoft", field: "Cloud and Software", logo: "/images/partners/microsoft.svg" },
+  { name: "NVIDIA", field: "AI and GPU Computing", logo: "/images/partners/nvidia.svg" },
+  { name: "Adobe", field: "Creative Digital Tools", logo: "/images/partners/adobe.svg" },
+  { name: "Meta", field: "Digital Product Ecosystem", logo: "/images/partners/meta.svg" },
+  { name: "OpenAI", field: "Generative AI", logo: "/images/partners/openai.svg" },
+  { name: "Google Cloud", field: "Cloud and Data", logo: "/images/partners/google-cloud.svg" },
+  { name: "AWS", field: "Cloud Infrastructure", logo: "/images/partners/aws.svg" },
+  { name: "IBM", field: "Enterprise AI", logo: "/images/partners/ibm.svg" },
+  { name: "Oracle", field: "Database and Enterprise", logo: "/images/partners/oracle.svg" },
+  { name: "Cisco", field: "Network Technology", logo: "/images/partners/cisco.svg" },
+  { name: "Intel", field: "Semiconductor", logo: "/images/partners/intel.svg" },
+  { name: "AMD", field: "High Performance Computing", logo: "/images/partners/amd.svg" },
+  { name: "Arm", field: "Chip Architecture", logo: "/images/partners/arm.svg" },
+  { name: "Qualcomm", field: "Mobile Computing", logo: "/images/partners/qualcomm.svg" },
+  { name: "Bloomberg", field: "Data Engineering", logo: "/images/partners/bloomberg.svg" },
+  { name: "Alibaba Cloud", field: "Cloud Ecosystem", logo: "/images/partners/alibaba-cloud.svg" },
+  { name: "Tencent Cloud", field: "Digital Infrastructure", logo: "/images/partners/tencent-cloud.svg" },
+  { name: "Huawei Cloud", field: "Cloud and Network", logo: "/images/partners/huawei-cloud.svg" },
+  { name: "DCI Indonesia", field: "Data Center", logo: "/images/partners/dci-indonesia.svg" },
+  { name: "Telkom Indonesia", field: "Digital Connectivity", logo: "/images/partners/telkom-indonesia.svg" },
+  { name: "Gojek", field: "Platform Engineering", logo: "/images/partners/gojek.svg" },
+  { name: "Tokopedia", field: "E-Commerce Platform", logo: "/images/partners/tokopedia.svg" },
+  { name: "Traveloka", field: "Digital Product", logo: "/images/partners/traveloka.svg" },
+  { name: "Grab", field: "Super App Ecosystem", logo: "/images/partners/grab.svg" },
+  { name: "Shopee", field: "Digital Commerce", logo: "/images/partners/shopee.svg" }
+];
+
+const rowOne = partners.slice(0, 13);
+const rowTwo = partners.slice(13);
+const marqueeOne = [...rowOne, ...rowOne];
+const marqueeTwo = [...rowTwo, ...rowTwo];
+---
+
+<section class="partner-strip" id="collaboration">
+  <div class="container partner-v5-layout">
+    <div class="partner-copy" data-reveal>
+      <span>Industry Ecosystem</span>
+      <h2>{title}</h2>
+      <p>{subtitle}</p>
+    </div>
+
+    <div class="partner-marquee-wrap" data-reveal>
+      <div class="partner-marquee">
+        <div class="partner-track partner-track-left">
+          {marqueeOne.map((partner) => (
+            <div class="partner-ticker-card partner-logo-card" data-interactive-card>
+              <img src={partner.logo} alt={`${partner.name} logo`} loading="lazy" />
+              <strong>{partner.name}</strong>
+              <small>{partner.field}</small>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="partner-marquee partner-marquee-second">
+        <div class="partner-track partner-track-right">
+          {marqueeTwo.map((partner) => (
+            <div class="partner-ticker-card partner-logo-card" data-interactive-card>
+              <img src={partner.logo} alt={`${partner.name} logo`} loading="lazy" />
+              <strong>{partner.name}</strong>
+              <small>{partner.field}</small>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

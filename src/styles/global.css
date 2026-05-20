@@ -922,3 +922,899 @@ a {
     min-height: auto;
   }
 }
+
+/* ARCDEV Design Repair v4 */
+
+.header-inner {
+  min-height: 78px;
+  grid-template-columns: 360px 1fr auto;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.brand-logo {
+  height: 46px;
+  width: auto;
+  flex: 0 0 auto;
+}
+
+.brand-text {
+  display: grid;
+  gap: 2px;
+  line-height: 1.05;
+}
+
+.brand-text strong {
+  color: var(--arcdev-purple-950);
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.brand-text small {
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.site-nav {
+  gap: 28px;
+}
+
+.site-nav a {
+  font-size: 13px;
+  letter-spacing: 0.01em;
+}
+
+.hero-v2 {
+  min-height: 760px;
+}
+
+.hero-v2-grid {
+  min-height: 760px;
+  grid-template-columns: minmax(0, 0.98fr) 420px;
+  gap: 92px;
+  padding-block: 110px;
+}
+
+.hero-university-name {
+  margin: 0 0 22px;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 16px;
+  font-weight: 850;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.section-code {
+  margin-bottom: 24px;
+}
+
+.section-code strong {
+  max-width: 720px;
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  line-height: 1.65;
+}
+
+.hero-v2-title {
+  max-width: 860px;
+  font-size: clamp(48px, 5.1vw, 82px);
+  line-height: 1.04;
+  letter-spacing: -0.055em;
+  font-weight: 760;
+}
+
+.hero-v2-title span {
+  display: block;
+  margin-bottom: 2px;
+}
+
+.hero-v2-lead {
+  max-width: 760px;
+  margin-top: 30px;
+  font-size: 18px;
+  line-height: 1.78;
+}
+
+.admission-panel {
+  min-height: 330px;
+  padding: 34px;
+}
+
+.admission-panel h2 {
+  font-size: 32px;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+}
+
+.admission-panel span {
+  font-size: 16px;
+  line-height: 1.72;
+}
+
+.partner-strip {
+  background: #ffffff;
+  border-bottom: 1px solid var(--arcdev-line);
+  padding-block: 54px;
+}
+
+.partner-grid {
+  display: grid;
+  grid-template-columns: 380px minmax(0, 1fr);
+  gap: 64px;
+  align-items: center;
+}
+
+.partner-copy span {
+  display: block;
+  color: var(--arcdev-purple-700);
+  font-size: 12px;
+  font-weight: 950;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.partner-copy h2 {
+  margin: 0;
+  color: var(--arcdev-ink);
+  font-size: 34px;
+  line-height: 1.08;
+  letter-spacing: -0.055em;
+}
+
+.partner-copy p {
+  margin: 16px 0 0;
+  color: #475569;
+  line-height: 1.7;
+}
+
+.partner-logos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--arcdev-line);
+  border-left: 1px solid var(--arcdev-line);
+}
+
+.partner-logos span {
+  min-height: 74px;
+  display: grid;
+  place-items: center;
+  border-right: 1px solid var(--arcdev-line);
+  border-bottom: 1px solid var(--arcdev-line);
+  color: var(--arcdev-purple-950);
+  font-weight: 950;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+  background: #ffffff;
+}
+
+.rector-grid {
+  grid-template-columns: 380px minmax(0, 1fr);
+  gap: 70px;
+}
+
+.rector-visual {
+  min-height: 560px;
+  background: #f6f3ff;
+  position: relative;
+}
+
+.rector-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.rector-visual.is-missing::after {
+  content: "Foto rektor belum ditemukan di public/images/people/rector-gland-siahaan.png";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 28px;
+  text-align: center;
+  color: var(--arcdev-purple-700);
+  font-weight: 850;
+  line-height: 1.5;
+}
+
+.rector-copy h2 {
+  font-size: clamp(34px, 3.3vw, 54px);
+  line-height: 1.06;
+  letter-spacing: -0.055em;
+  font-weight: 720;
+}
+
+.rector-copy p {
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.faculty-matrix {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.faculty-card-v2 {
+  min-height: 500px;
+  padding: 30px;
+}
+
+.faculty-card-top {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  margin-bottom: 26px;
+}
+
+.faculty-card-top span {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.faculty-card-top small {
+  font-size: 10px;
+  letter-spacing: 0.16em;
+}
+
+.faculty-card-v2 h3 {
+  font-size: 23px;
+  line-height: 1.18;
+  letter-spacing: -0.04em;
+}
+
+.faculty-card-v2 strong {
+  font-size: 14px;
+}
+
+.faculty-card-v2 p {
+  font-size: 15px;
+  line-height: 1.68;
+}
+
+.faculty-program-list li {
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.section-heading-v2 h2 {
+  font-size: clamp(38px, 4vw, 58px);
+  line-height: 1.04;
+  letter-spacing: -0.055em;
+  font-weight: 760;
+}
+
+.news-layout h3 {
+  font-size: 25px;
+  line-height: 1.18;
+}
+
+@media (max-width: 1200px) {
+  .header-inner {
+    grid-template-columns: 1fr auto;
+  }
+
+  .brand-text {
+    display: none;
+  }
+
+  .hero-v2-grid,
+  .rector-grid,
+  .partner-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admission-panel {
+    max-width: 560px;
+  }
+
+  .faculty-matrix,
+  .partner-logos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .hero-v2,
+  .hero-v2-grid {
+    min-height: auto;
+  }
+
+  .hero-v2-grid {
+    padding-block: 72px;
+  }
+
+  .hero-v2-title {
+    font-size: clamp(38px, 11vw, 56px);
+    letter-spacing: -0.045em;
+  }
+
+  .section-code {
+    align-items: flex-start;
+  }
+
+  .section-code strong {
+    font-size: 11px;
+    letter-spacing: 0.16em;
+  }
+
+  .faculty-matrix,
+  .partner-logos {
+    grid-template-columns: 1fr;
+  }
+
+  .rector-visual {
+    min-height: 420px;
+  }
+}
+
+/* Rector Image Fix for Transparent PNG */
+
+.rector-visual {
+  display: grid;
+  place-items: end center;
+  padding: 22px 22px 0;
+  background:
+    radial-gradient(circle at 50% 18%, rgba(91, 33, 182, 0.18), transparent 42%),
+    #f6f3ff;
+}
+
+.rector-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+/* ARCDEV UI/UX Repair v5 */
+
+@import "@fontsource-variable/plus-jakarta-sans";
+
+html {
+  scroll-padding-top: 104px;
+}
+
+body {
+  font-family: "Inter Variable", Inter, Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+section {
+  scroll-margin-top: 104px;
+}
+
+.hero-v2 h1,
+.section-heading-v2 h2,
+.partner-copy h2,
+.rector-copy h2,
+.admissions-copy h2,
+.news-layout h3,
+.faculty-card-v2 h3,
+.center-card h3 {
+  font-family: "Plus Jakarta Sans Variable", "Inter Variable", Inter, Arial, sans-serif;
+}
+
+.cursor-orb {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 420px;
+  height: 420px;
+  pointer-events: none;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(245, 184, 65, 0.12), rgba(91, 33, 182, 0.10), transparent 64%);
+  mix-blend-mode: screen;
+  transform: translate3d(-50%, -50%, 0);
+  z-index: 9999;
+  opacity: 0.72;
+}
+
+.site-header {
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.header-inner {
+  min-height: 82px;
+}
+
+.brand-logo {
+  height: 44px;
+}
+
+.brand-text strong {
+  font-size: 15px;
+  letter-spacing: 0.025em;
+}
+
+.brand-text small {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+}
+
+.site-nav a {
+  font-size: 14px;
+  font-weight: 850;
+}
+
+.hero-v2 {
+  min-height: 720px;
+  background:
+    radial-gradient(circle at var(--pointer-x, 70%) var(--pointer-y, 20%), rgba(245, 184, 65, 0.13), transparent 26%),
+    linear-gradient(120deg, rgba(27, 11, 59, 0.97), rgba(75, 31, 166, 0.95)),
+    radial-gradient(circle at 85% 15%, rgba(245, 184, 65, 0.22), transparent 36%);
+}
+
+.hero-v2-grid {
+  min-height: 720px;
+  grid-template-columns: minmax(0, 1fr) 390px;
+  gap: 78px;
+  align-items: center;
+  padding-block: 84px;
+}
+
+.hero-university-name {
+  margin-bottom: 22px;
+  font-size: 15px;
+  font-weight: 850;
+  letter-spacing: 0.22em;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.section-code {
+  gap: 18px;
+  margin-bottom: 22px;
+  align-items: flex-start;
+}
+
+.section-code span {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+}
+
+.section-code strong {
+  max-width: 640px;
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  line-height: 1.8;
+}
+
+.hero-v2-title {
+  max-width: 850px;
+  font-size: clamp(40px, 4.25vw, 70px);
+  line-height: 1.16;
+  letter-spacing: -0.032em;
+  font-weight: 760;
+  text-wrap: balance;
+}
+
+.hero-v2-title span {
+  display: block;
+  margin-bottom: 6px;
+  padding-bottom: 0.03em;
+}
+
+.hero-v2-lead {
+  max-width: 720px;
+  margin-top: 26px;
+  font-size: 17px;
+  line-height: 1.82;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.hero-v2-actions {
+  margin-top: 30px;
+}
+
+.admission-panel {
+  min-height: 310px;
+  padding: 32px;
+  overflow: hidden;
+  position: relative;
+}
+
+.admission-panel::before,
+.faculty-card-v2::before,
+.center-card::before,
+.news-layout article::before,
+.partner-ticker-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--card-x, 50%) var(--card-y, 50%), rgba(245, 184, 65, 0.16), transparent 36%);
+  opacity: 0;
+  transition: opacity 0.28s ease;
+  pointer-events: none;
+}
+
+.admission-panel:hover::before,
+.faculty-card-v2:hover::before,
+.center-card:hover::before,
+.news-layout article:hover::before,
+.partner-ticker-card:hover::before {
+  opacity: 1;
+}
+
+.admission-panel h2 {
+  font-size: 30px;
+  line-height: 1.16;
+  letter-spacing: -0.035em;
+}
+
+.admission-panel span {
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.btn-v2 {
+  border-radius: 6px;
+  will-change: transform;
+}
+
+.partner-strip {
+  background: #ffffff;
+  border-top: 1px solid var(--arcdev-line);
+  border-bottom: 1px solid var(--arcdev-line);
+  padding-block: 76px;
+  overflow: hidden;
+}
+
+.partner-v5-layout {
+  display: grid;
+  grid-template-columns: 410px minmax(0, 1fr);
+  gap: 70px;
+  align-items: center;
+}
+
+.partner-copy span {
+  display: block;
+  color: var(--arcdev-purple-700);
+  font-size: 12px;
+  font-weight: 950;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.partner-copy h2 {
+  margin: 0;
+  color: var(--arcdev-ink);
+  font-size: clamp(34px, 3.2vw, 54px);
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+  font-weight: 720;
+}
+
+.partner-copy p {
+  margin: 22px 0 0;
+  color: #475569;
+  font-size: 17px;
+  line-height: 1.78;
+}
+
+.partner-marquee-wrap {
+  display: grid;
+  gap: 16px;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, black 9%, black 91%, transparent);
+}
+
+.partner-marquee {
+  overflow: hidden;
+}
+
+.partner-marquee-second {
+  margin-left: -120px;
+}
+
+.partner-track {
+  display: flex;
+  width: max-content;
+  gap: 16px;
+  will-change: transform;
+}
+
+.partner-track-left {
+  animation: arcdev-marquee-left 38s linear infinite;
+}
+
+.partner-track-right {
+  animation: arcdev-marquee-right 42s linear infinite;
+}
+
+.partner-marquee-wrap:hover .partner-track {
+  animation-play-state: paused;
+}
+
+.partner-ticker-card {
+  position: relative;
+  width: 230px;
+  min-height: 96px;
+  border: 1px solid var(--arcdev-line);
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 18px 20px;
+  overflow: hidden;
+  will-change: transform;
+}
+
+.partner-ticker-card strong {
+  color: var(--arcdev-purple-950);
+  font-size: 18px;
+  font-weight: 950;
+  letter-spacing: -0.02em;
+  position: relative;
+  z-index: 1;
+}
+
+.partner-ticker-card small {
+  margin-top: 8px;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 750;
+  line-height: 1.35;
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes arcdev-marquee-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes arcdev-marquee-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.rector-grid {
+  grid-template-columns: 350px minmax(0, 1fr);
+  gap: 72px;
+  align-items: start;
+}
+
+.rector-visual {
+  min-height: 560px;
+  padding: 26px 26px 0;
+}
+
+.rector-visual img {
+  width: 100%;
+  height: 100%;
+  max-height: 540px;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+.rector-copy h2 {
+  font-size: clamp(30px, 3vw, 46px);
+  line-height: 1.14;
+  letter-spacing: -0.035em;
+  font-weight: 730;
+  max-width: 880px;
+}
+
+.rector-copy h3 {
+  font-size: 18px;
+}
+
+.rector-copy p {
+  max-width: 880px;
+  font-size: 15.5px;
+  line-height: 1.78;
+}
+
+.rector-columns {
+  gap: 24px;
+}
+
+.faculty-v2 {
+  background: #f6f3ff;
+}
+
+.faculty-matrix {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.faculty-card-v2 {
+  position: relative;
+  min-height: 470px;
+  padding: 28px;
+  overflow: hidden;
+}
+
+.faculty-card-v2 h3 {
+  font-size: 21px;
+  line-height: 1.24;
+  letter-spacing: -0.028em;
+  font-weight: 680;
+}
+
+.faculty-card-v2 strong {
+  font-size: 13.5px;
+  line-height: 1.45;
+}
+
+.faculty-card-v2 p {
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+
+.faculty-program-list {
+  gap: 7px;
+}
+
+.faculty-program-list li {
+  font-size: 12.2px;
+  line-height: 1.45;
+}
+
+.faculty-card-v2 a {
+  margin-top: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.section-heading-v2 h2 {
+  max-width: 840px;
+  font-size: clamp(34px, 3.8vw, 54px);
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+  font-weight: 720;
+  text-wrap: balance;
+}
+
+.section-heading-v2 p {
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.center-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.news-layout article {
+  position: relative;
+  overflow: hidden;
+}
+
+.news-layout h3 {
+  font-size: 22px;
+  line-height: 1.24;
+  letter-spacing: -0.025em;
+  font-weight: 680;
+}
+
+@media (max-width: 1200px) {
+  .hero-v2-grid,
+  .partner-v5-layout,
+  .rector-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admission-panel {
+    max-width: 620px;
+  }
+
+  .faculty-matrix {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .cursor-orb {
+    display: none;
+  }
+
+  .hero-v2,
+  .hero-v2-grid {
+    min-height: auto;
+  }
+
+  .hero-v2-grid {
+    padding-block: 64px;
+    gap: 46px;
+  }
+
+  .hero-v2-title {
+    font-size: clamp(34px, 10vw, 50px);
+    line-height: 1.16;
+    letter-spacing: -0.025em;
+  }
+
+  .section-code strong {
+    font-size: 10.5px;
+    letter-spacing: 0.16em;
+  }
+
+  .partner-marquee-second {
+    margin-left: 0;
+  }
+
+  .partner-ticker-card {
+    width: 210px;
+  }
+
+  .faculty-matrix {
+    grid-template-columns: 1fr;
+  }
+
+  .faculty-card-v2 {
+    min-height: auto;
+  }
+
+  .rector-visual {
+    min-height: 420px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .partner-track-left,
+  .partner-track-right {
+    animation: none;
+  }
+
+  .cursor-orb {
+    display: none;
+  }
+}
+
+/* Partner Logo Display v3 */
+
+.partner-logo-card {
+  min-height: 138px;
+  gap: 8px;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.partner-logo-card img {
+  width: 126px;
+  height: 38px;
+  object-fit: contain;
+  object-position: left center;
+  display: block;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 1;
+  filter: saturate(1.05) contrast(1.03);
+  transition: transform 0.28s ease, filter 0.28s ease;
+}
+
+.partner-logo-card strong,
+.partner-logo-card small {
+  position: relative;
+  z-index: 1;
+}
+
+.partner-logo-card:hover img {
+  transform: translateY(-3px) scale(1.05);
+  filter: saturate(1.18) contrast(1.08);
+}
+
+.partner-logo-card:hover {
+  border-color: rgba(75, 31, 166, 0.35);
+}

@@ -6,7 +6,11 @@ const rector = content.rector;
 <section class="rector-v2 section-pad" id="rector">
   <div class="container rector-grid">
     <div class="rector-visual" data-reveal>
-      <img src={rector.photo} alt={rector.name} />
+      <img
+        src={rector.photo}
+        alt={rector.name}
+        onerror="this.style.display='none'; this.parentElement.classList.add('is-missing');"
+      />
     </div>
 
     <div class="rector-copy" data-reveal>
