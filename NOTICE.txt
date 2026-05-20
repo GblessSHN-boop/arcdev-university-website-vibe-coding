@@ -1,0 +1,7 @@
+﻿ARCDEV University Website Vibe Coding is an experimental frontend-only website prototype.
+
+This project is not an official institutional website unless formally authorized. All university names, faculty structures, program descriptions, admission concepts, and digital portal references are used as part of a conceptual website design and frontend development experiment.
+
+ARCDEV University Website Vibe Coding adalah prototype website frontend-only yang bersifat eksperimental.
+
+Proyek ini bukan website institusi resmi kecuali telah memperoleh otorisasi formal. Seluruh nama universitas, struktur fakultas, deskripsi program studi, konsep penerimaan mahasiswa baru, dan referensi portal digital digunakan sebagai bagian dari eksperimen desain website dan pengembangan frontend.

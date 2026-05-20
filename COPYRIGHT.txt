@@ -1,0 +1,15 @@
+﻿Copyright (c) 2026 Gland J B Siahaan. All rights reserved.
+
+This repository, including its source code, design concept, documentation, written content, folder structure, and related project materials, is protected by copyright.
+
+No permission is granted to copy, modify, redistribute, sublicense, publish, sell, commercialize, or use this repository for institutional or production purposes without prior written permission from the copyright holder.
+
+This repository is provided only for personal learning, frontend experimentation, portfolio development, and non-commercial review.
+
+Hak cipta (c) 2026 Gland J B Siahaan. Seluruh hak cipta dilindungi.
+
+Repository ini, termasuk kode sumber, konsep desain, dokumentasi, konten tertulis, struktur folder, dan seluruh materi proyek terkait, dilindungi oleh hak cipta.
+
+Tidak diberikan izin untuk menyalin, memodifikasi, mendistribusikan ulang, memberikan sublisensi, menerbitkan, menjual, mengomersialkan, atau menggunakan repository ini untuk kepentingan institusional maupun produksi tanpa izin tertulis dari pemegang hak cipta.
+
+Repository ini hanya disediakan untuk pembelajaran pribadi, eksperimen frontend, pengembangan portofolio, dan peninjauan non-komersial.
