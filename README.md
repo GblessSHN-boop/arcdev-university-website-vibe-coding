@@ -51,7 +51,7 @@ The selected stack is intended to support a fast, structured, responsive, and ma
 
 Current phase: frontend starter structure.
 
-The repository already contains the initial folder organization, base layout files, homepage components, bilingual page folders, data files, global styling, and documentation files.
+The repository already contains the initial folder organization, base layout files, homepage components, bilingual page folders, data files, global styling, documentation files, copyright notice, and project notice.
 
 ## Project Purpose
 
