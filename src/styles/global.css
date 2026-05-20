@@ -1,4 +1,6 @@
-﻿:root {
+﻿@import "tailwindcss";
+@import "@fontsource-variable/inter";
+:root {
   --color-deep-purple: #241052;
   --color-primary-purple: #4B1FA6;
   --color-royal-purple: #5B21B6;
@@ -227,5 +229,91 @@ img {
   .hero {
     min-height: auto;
     padding: 96px 0;
+  }
+}
+
+
+/* ARCDEV Design Refinement Layer v1 */
+
+:root {
+  --radius-lg: 6px;
+  --shadow-soft: none;
+}
+
+body {
+  font-family: "Inter Variable", Inter, Arial, sans-serif;
+  letter-spacing: -0.01em;
+}
+
+.btn {
+  border-radius: 6px;
+  min-height: 48px;
+  padding: 0 24px;
+  font-weight: 800;
+}
+
+.card {
+  border-radius: 6px;
+  box-shadow: none;
+  border: 1px solid rgba(17, 24, 39, 0.10);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 330px;
+  padding: 30px;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.card:hover {
+  border-color: rgba(75, 31, 166, 0.45);
+  transform: translateY(-4px);
+}
+
+.card .btn {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+.grid-4,
+.grid-3 {
+  align-items: stretch;
+}
+
+.hero-panel {
+  border-radius: 8px;
+}
+
+.hero h1 {
+  font-size: clamp(48px, 5.4vw, 76px);
+  letter-spacing: -0.075em;
+}
+
+.section-soft {
+  background: #F6F3FF;
+}
+
+.section-title {
+  letter-spacing: -0.065em;
+}
+
+.site-header {
+  border-bottom: 1px solid rgba(17, 24, 39, 0.10);
+}
+
+.header-inner {
+  min-height: 74px;
+}
+
+.logo {
+  letter-spacing: -0.06em;
+}
+
+@media (max-width: 900px) {
+  .card {
+    min-height: auto;
+  }
+
+  .hero h1 {
+    font-size: clamp(42px, 11vw, 64px);
   }
 }

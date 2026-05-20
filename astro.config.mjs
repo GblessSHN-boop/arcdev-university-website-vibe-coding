@@ -1,5 +1,9 @@
 ﻿import { defineConfig } from "astro/config";
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  site: "https://arcdev-university.example.com"
+  site: "https://gblessshn-boop.github.io/arcdev-university-website-vibe-coding",
+  vite: {
+    plugins: [tailwindcss()]
+  }
 });
