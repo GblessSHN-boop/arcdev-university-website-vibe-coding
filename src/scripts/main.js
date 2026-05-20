@@ -143,3 +143,76 @@ const countObserver = new IntersectionObserver(
 counters.forEach((counter) => countObserver.observe(counter));
 
 console.log("ARCDEV UI/UX v5 initialized.");
+
+
+
+
+
+// === ARCDEV CLEAN MOTION V8 START ===
+(() => {
+  const ready = (fn) => {
+    if (document.readyState !== "loading") fn();
+    else document.addEventListener("DOMContentLoaded", fn);
+  };
+
+  ready(() => {
+    document.querySelectorAll(".arc-cursor, .u6-cursor, .cursor-orb, .custom-cursor").forEach((el) => {
+      el.remove();
+    });
+
+    const revealItems = document.querySelectorAll(
+      ".reveal, [data-reveal], .faculty-card-v2, .faculty-card, .partner-ticker-card, .partner-card, .center-card, .news-side, .news-main, .info-card, .rector-copy, .rector-visual, .arc-static-card, .arc-static-panel"
+    );
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -80px 0px" }
+      );
+
+      revealItems.forEach((item) => observer.observe(item));
+    } else {
+      revealItems.forEach((item) => item.classList.add("is-visible"));
+    }
+
+    const interactiveItems = document.querySelectorAll(
+      "[data-interactive-card], .faculty-card-v2, .faculty-card, .partner-ticker-card, .partner-card, .center-card, .news-side, .news-main, .info-card, .arc-static-card, .arc-static-panel"
+    );
+
+    interactiveItems.forEach((card) => {
+      card.addEventListener("pointermove", (event) => {
+        const rect = card.getBoundingClientRect();
+        const x = ((event.clientX - rect.left) / rect.width) * 100;
+        const y = ((event.clientY - rect.top) / rect.height) * 100;
+        card.style.setProperty("--mx", `${x}%`);
+        card.style.setProperty("--my", `${y}%`);
+      });
+
+      card.addEventListener("pointerleave", () => {
+        card.style.removeProperty("--mx");
+        card.style.removeProperty("--my");
+      });
+    });
+
+    document.querySelectorAll("img[src*='/images/partners/']").forEach((img) => {
+      const markMissing = () => {
+        const card = img.closest(".partner-ticker-card, .partner-card, .arc-partner-card, article, div");
+        if (card) card.classList.add("is-logo-missing");
+        img.style.display = "none";
+      };
+
+      img.addEventListener("error", markMissing);
+
+      if (img.complete && img.naturalWidth === 0) {
+        markMissing();
+      }
+    });
+  });
+})();
+// === ARCDEV CLEAN MOTION V8 END ===

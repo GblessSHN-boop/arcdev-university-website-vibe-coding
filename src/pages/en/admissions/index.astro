@@ -1,13 +1,11 @@
 ﻿---
-import BaseLayout from "../../../layouts/BaseLayout.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ArcStaticPage from "../../components/global/ArcStaticPage.astro";
+import { arcdevPages } from "../../data/arcdevPages.js";
+
+const page = arcdevPages.en["admissions"];
 ---
 
-<BaseLayout title="ARCDEV University">
-  <main class="section">
-    <div class="container">
-      <p class="eyebrow">ARCDEV University</p>
-      <h1 class="section-title">Halaman sedang disiapkan</h1>
-      <p class="section-lead">Konten halaman ini akan dikembangkan pada tahap berikutnya.</p>
-    </div>
-  </main>
+<BaseLayout title={${page.title} | } description={page.lead} lang="en">
+  <ArcStaticPage page={page} lang="en" />
 </BaseLayout>
