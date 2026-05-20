@@ -1,10 +1,23 @@
 ﻿---
 import { navigation } from "../../data/navigation.js";
+
+const isEnglish = Astro.url.pathname.startsWith("/en");
+const homeHref = isEnglish ? "/en" : "/id";
+const ctaHref = isEnglish ? "/en/admissions" : "/id/penerimaan-mahasiswa-baru";
+const ctaLabel = isEnglish ? "Apply Now" : "Daftar Sekarang";
 ---
 
 <header class="site-header">
   <div class="container header-inner">
-    <a class="logo" href="/id">ARCDEV</a>
+    <a class="logo" href={homeHref} aria-label="ARCDEV University">
+      <img
+        class="logo-image"
+        src="/images/brand/arcdev-logo.png"
+        alt="ARCDEV University logo"
+        loading="eager"
+      />
+      <span class="sr-only">ARCDEV University</span>
+    </a>
 
     <nav class="nav" aria-label="Main navigation">
       {navigation.map((item) => (
@@ -12,6 +25,6 @@ import { navigation } from "../../data/navigation.js";
       ))}
     </nav>
 
-    <a class="btn btn-primary" href="/id/penerimaan-mahasiswa-baru">Daftar Sekarang</a>
+    <a class="btn btn-primary" href={ctaHref}>{ctaLabel}</a>
   </div>
 </header>
