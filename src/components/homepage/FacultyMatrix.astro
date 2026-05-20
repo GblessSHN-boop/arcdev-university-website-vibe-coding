@@ -5,9 +5,9 @@ const { content } = Astro.props;
 <section class="faculty-v2 section-pad" id="faculties">
   <div class="container">
     <div class="section-heading-v2" data-reveal>
-      <span>02 / Academic Pathway</span>
-      <h2>{content.lang === "id" ? "Pilih Fakultas dengan Jalur Akademik yang Terarah" : "Choose a Faculty with a Clear Academic Pathway"}</h2>
-      <p>{content.lang === "id" ? "Setiap fakultas disusun sebagai jalur akademik yang memiliki fokus kompetensi, arah profesi, dan kontribusi sosial yang berbeda." : "Each faculty is structured as an academic pathway with distinct competency focus, professional direction, and social contribution."}</p>
+      <span>02 / Academic Ecosystem</span>
+      <h2>{content.lang === "id" ? "Dua Belas Fakultas untuk Teknologi, Desain, AI, dan Industri Masa Depan" : "Twelve Faculties for Technology, Design, AI, and Future Industry"}</h2>
+      <p>{content.lang === "id" ? "Setiap fakultas memiliki fokus akademik yang jelas agar sistem informasi, teknik informatika, AI, DKV, media digital, UI/UX, bisnis digital, Web3, quantum, space technology, chip, dan digital twin tidak tercampur secara akademik." : "Each faculty has a clear academic focus, ensuring that information systems, informatics engineering, AI, visual design, digital media, UI/UX, digital business, Web3, quantum, space technology, chip design, and digital twin are academically distinct."}</p>
     </div>
 
     <div class="faculty-matrix">
@@ -15,13 +15,19 @@ const { content } = Astro.props;
         <article class="faculty-card-v2" data-reveal>
           <div class="faculty-card-top">
             <span>{faculty.code}</span>
-            <small>{content.lang === "id" ? "Faculty Code" : "Academic Unit"}</small>
+            <small>{content.lang === "id" ? "Academic Faculty" : "Academic Faculty"}</small>
           </div>
 
           <div>
             <h3>{faculty.title}</h3>
             <strong>{faculty.english}</strong>
             <p>{faculty.text}</p>
+
+            <ul class="faculty-program-list">
+              {faculty.programs.map((program) => (
+                <li>{program}</li>
+              ))}
+            </ul>
           </div>
 
           <a href={faculty.href}>{content.lang === "id" ? "Lihat Fakultas" : "View Faculty"}</a>

@@ -1,0 +1,23 @@
+﻿---
+const { content } = Astro.props;
+---
+
+<section class="centers-v2 section-pad" id="centers">
+  <div class="container">
+    <div class="section-heading-v2" data-reveal>
+      <span>03 / Centers of Excellence</span>
+      <h2>{content.lang === "id" ? "Pusat Unggulan untuk Riset dan Industri Global" : "Centers of Excellence for Research and Global Industry"}</h2>
+      <p>{content.lang === "id" ? "ARCDEV menghubungkan fakultas dengan pusat unggulan agar pembelajaran tidak berhenti pada teori, tetapi bergerak ke riset, produk, sertifikasi, dan kolaborasi industri." : "ARCDEV connects faculties with centers of excellence so learning moves beyond theory into research, products, certification, and industry collaboration."}</p>
+    </div>
+
+    <div class="centers-grid">
+      {content.centers.map((center) => (
+        <article class="center-card" data-reveal>
+          <span>{center.faculty}</span>
+          <h3>{center.name}</h3>
+          <p>{center.focus}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
