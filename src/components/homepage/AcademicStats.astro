@@ -1,0 +1,17 @@
+﻿---
+const { content } = Astro.props;
+---
+
+<section class="stats-v2">
+  <div class="container stats-grid">
+    {content.stats.map((item) => (
+      <article class="stat-item" data-reveal>
+        <strong>
+          <span data-count={item.value}>0</span>{item.suffix}
+        </strong>
+        <h3>{item.label}</h3>
+        <p>{item.note}</p>
+      </article>
+    ))}
+  </div>
+</section>

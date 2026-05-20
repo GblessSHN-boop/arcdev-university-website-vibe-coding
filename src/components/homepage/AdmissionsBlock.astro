@@ -1,0 +1,28 @@
+﻿---
+const { content } = Astro.props;
+const admissions = content.admissions;
+---
+
+<section class="admissions-v2 section-pad" id="admissions">
+  <div class="container admissions-grid">
+    <div class="admissions-copy" data-reveal>
+      <span>{admissions.label}</span>
+      <h2>{admissions.title}</h2>
+      <p>{admissions.text}</p>
+
+      <div class="admission-actions">
+        <a class="btn-v2 btn-v2-primary" href="#">{admissions.primary}</a>
+        <a class="btn-v2 btn-v2-ghost" href="#">{admissions.secondary}</a>
+      </div>
+    </div>
+
+    <div class="admission-steps">
+      {admissions.steps.map((step, index) => (
+        <article data-reveal>
+          <span>{String(index + 1).padStart(2, "0")}</span>
+          <strong>{step}</strong>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

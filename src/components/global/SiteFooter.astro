@@ -1,6 +1,39 @@
-﻿<footer class="footer">
-  <div class="container">
-    <h2>ARCDEV University</h2>
-    <p>Portal resmi konseptual Universitas ARCDEV untuk profil institusi, fakultas, program studi, penerimaan mahasiswa baru, newsroom, dan layanan digital kampus.</p>
+﻿---
+const { content } = Astro.props;
+---
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <img class="footer-logo" src="/images/brand/arcdev-logo.png" alt="ARCDEV University logo" />
+      <p>
+        ARCDEV University Website adalah prototype website kampus modern dengan struktur bilingual, profil fakultas, PMB, berita, dan portal digital.
+      </p>
+    </div>
+
+    <div>
+      <h3>Faculties</h3>
+      {content.faculties.map((faculty) => (
+        <a href={faculty.href}>{faculty.title}</a>
+      ))}
+    </div>
+
+    <div>
+      <h3>Access</h3>
+      <a href={`/${content.lang}#admissions`}>Admissions</a>
+      <a href={`/${content.lang}#newsroom`}>Newsroom</a>
+      <a href={`/${content.lang}#programs`}>Programs</a>
+    </div>
+
+    <div>
+      <h3>Contact</h3>
+      <p>Medan, North Sumatra, Indonesia</p>
+      <p>ARCDEV Digital Campus</p>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <span>Copyright © 2026 ARCDEV University Website Vibe Coding.</span>
+    <span>Frontend-only experimental project.</span>
   </div>
 </footer>

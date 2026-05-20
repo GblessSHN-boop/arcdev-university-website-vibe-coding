@@ -2,23 +2,24 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import SiteHeader from "../../components/global/SiteHeader.astro";
 import SiteFooter from "../../components/global/SiteFooter.astro";
-import HeroSection from "../../components/homepage/HeroSection.astro";
-import QuickAccess from "../../components/portals/QuickAccess.astro";
-import AudienceGateway from "../../components/shared/AudienceGateway.astro";
-import FacultyGrid from "../../components/faculties/FacultyGrid.astro";
-import AdmissionCTA from "../../components/admissions/AdmissionCTA.astro";
-import NewsPreview from "../../components/newsroom/NewsPreview.astro";
+import HeroEditorial from "../../components/homepage/HeroEditorial.astro";
+import AcademicStats from "../../components/homepage/AcademicStats.astro";
+import FacultyMatrix from "../../components/homepage/FacultyMatrix.astro";
+import AdmissionsBlock from "../../components/homepage/AdmissionsBlock.astro";
+import NewsroomEditorial from "../../components/homepage/NewsroomEditorial.astro";
+import { homepageContent } from "../../data/homepageContent.js";
+
+const content = homepageContent.en;
 ---
 
-<BaseLayout title="ARCDEV University | Official Website" lang="en">
-  <SiteHeader />
+<BaseLayout title={content.title} description={content.description} lang="en">
+  <SiteHeader content={content} />
   <main>
-    <HeroSection />
-    <QuickAccess />
-    <AudienceGateway />
-    <FacultyGrid />
-    <AdmissionCTA />
-    <NewsPreview />
+    <HeroEditorial content={content} />
+    <AcademicStats content={content} />
+    <FacultyMatrix content={content} />
+    <AdmissionsBlock content={content} />
+    <NewsroomEditorial content={content} />
   </main>
-  <SiteFooter />
+  <SiteFooter content={content} />
 </BaseLayout>

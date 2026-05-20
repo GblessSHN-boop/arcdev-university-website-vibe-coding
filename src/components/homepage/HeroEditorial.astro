@@ -1,0 +1,36 @@
+﻿---
+const { content } = Astro.props;
+const hero = content.hero;
+---
+
+<section class="hero-v2" id="about">
+  <div class="container hero-v2-grid">
+    <div class="hero-v2-copy">
+      <div class="section-code">
+        <span>{hero.code}</span>
+        <strong>{hero.eyebrow}</strong>
+      </div>
+
+      <h1 class="hero-v2-title">
+        {hero.titleLines.map((line) => (
+          <span data-hero-line>{line}</span>
+        ))}
+      </h1>
+
+      <p class="hero-v2-lead" data-reveal>{hero.lead}</p>
+
+      <div class="hero-v2-actions" data-reveal>
+        <a class="btn-v2 btn-v2-light" href={`/${content.lang}#admissions`}>{hero.primary}</a>
+        <a class="btn-v2 btn-v2-outline" href={`/${content.lang}#faculties`}>{hero.secondary}</a>
+      </div>
+    </div>
+
+    <aside class="admission-panel" data-reveal>
+      <div class="panel-index">PMB</div>
+      <p>{hero.panelMeta}</p>
+      <h2>{hero.panelTitle}</h2>
+      <span>{hero.panelText}</span>
+      <a href={`/${content.lang}#admissions`}>{hero.panelAction}</a>
+    </aside>
+  </div>
+</section>

@@ -1,0 +1,26 @@
+﻿---
+const { content } = Astro.props;
+const news = content.news;
+---
+
+<section class="news-v2 section-pad" id="newsroom">
+  <div class="container">
+    <div class="section-heading-v2 news-heading" data-reveal>
+      <span>03 / {news.label}</span>
+      <h2>{news.title}</h2>
+    </div>
+
+    <div class="news-layout">
+      {news.items.map((item, index) => (
+        <article class={index === 0 ? "news-main" : "news-side"} data-reveal>
+          <div>
+            <span>{item.category}</span>
+            <small>{item.date}</small>
+          </div>
+          <h3>{item.title}</h3>
+          <a href="#">{content.lang === "id" ? "Baca informasi" : "Read update"}</a>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

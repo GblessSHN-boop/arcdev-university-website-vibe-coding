@@ -1,0 +1,32 @@
+﻿---
+const { content } = Astro.props;
+---
+
+<section class="faculty-v2 section-pad" id="faculties">
+  <div class="container">
+    <div class="section-heading-v2" data-reveal>
+      <span>02 / Academic Pathway</span>
+      <h2>{content.lang === "id" ? "Pilih Fakultas dengan Jalur Akademik yang Terarah" : "Choose a Faculty with a Clear Academic Pathway"}</h2>
+      <p>{content.lang === "id" ? "Setiap fakultas disusun sebagai jalur akademik yang memiliki fokus kompetensi, arah profesi, dan kontribusi sosial yang berbeda." : "Each faculty is structured as an academic pathway with distinct competency focus, professional direction, and social contribution."}</p>
+    </div>
+
+    <div class="faculty-matrix">
+      {content.faculties.map((faculty) => (
+        <article class="faculty-card-v2" data-reveal>
+          <div class="faculty-card-top">
+            <span>{faculty.code}</span>
+            <small>{content.lang === "id" ? "Faculty Code" : "Academic Unit"}</small>
+          </div>
+
+          <div>
+            <h3>{faculty.title}</h3>
+            <strong>{faculty.english}</strong>
+            <p>{faculty.text}</p>
+          </div>
+
+          <a href={faculty.href}>{content.lang === "id" ? "Lihat Fakultas" : "View Faculty"}</a>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
