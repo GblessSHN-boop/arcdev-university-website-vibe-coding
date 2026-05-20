@@ -1,0 +1,74 @@
+﻿---
+const identity = [
+  ["Nama resmi", "Universitas ARCDEV Indonesia"],
+  ["Singkatan", "UARCDEV"],
+  ["Nama internasional", "ARCDEV University"],
+  ["Kepanjangan filosofis", "Academic Research & Creative Development"],
+  ["Makna teknologis", "Architecture Development, yaitu pengembangan arsitektur sistem, perangkat lunak, dan teknologi digital."]
+];
+---
+
+<section id="tentang" class="philosophy-section section-shell">
+  <div class="container">
+    <div class="philosophy-heading" data-reveal>
+      <p class="section-kicker">UARCDEV IDENTITY</p>
+      <h2 class="section-title">Identitas, Filosofi Nama, dan Filosofi Logo UARCDEV</h2>
+      <p class="section-description">
+        Universitas ARCDEV Indonesia dibangun sebagai kampus teknologi kreatif yang menggabungkan riset akademik,
+        pengembangan sistem digital, kreativitas, dan kesiapan industri masa depan.
+      </p>
+    </div>
+
+    <div class="identity-grid" data-reveal>
+      {identity.map(([label, value]) => (
+        <div class="identity-card" data-interactive-card>
+          <h3>{label}</h3>
+          <p>{value}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="philosophy-grid">
+      <article class="philosophy-card" data-reveal data-interactive-card>
+        <h3>Filosofi Nama ARCDEV</h3>
+        <p>
+          ARCDEV merupakan gabungan dari dua gagasan utama, yaitu ARC dan DEV. ARC dapat dimaknai sebagai
+          <strong> Architecture</strong>, yaitu struktur, rancangan, dan fondasi teknologi yang tertata.
+          Dalam konteks pendidikan tinggi, ARC juga merepresentasikan arah akademik yang sistematis,
+          riset yang terukur, dan pengembangan keilmuan yang memiliki kerangka jelas.
+        </p>
+        <p>
+          DEV berasal dari kata <strong>Developer</strong> dan <strong>Development</strong>. Makna ini menegaskan bahwa
+          universitas tidak hanya berorientasi pada teori, tetapi juga pada kemampuan menciptakan, membangun,
+          dan mengembangkan solusi nyata. Dengan demikian, ARCDEV dipahami sebagai institusi yang menghubungkan
+          riset akademik, kreativitas, rekayasa teknologi, dan pengembangan proyek berbasis kebutuhan industri.
+        </p>
+        <p>
+          Secara konseptual, <strong>Academic Research & Creative Development</strong> menjadi kepanjangan utama
+          karena cakupannya luas. Frasa ini membuka ruang untuk web engineering, software development,
+          digital business, creative technology, data science, game development, hingga esport coding.
+        </p>
+      </article>
+
+      <article class="philosophy-card" data-reveal data-interactive-card>
+        <h3>Filosofi Logo ARCDEV</h3>
+        <p>
+          Logo ARCDEV berbentuk huruf <strong>A</strong> dengan gaya <strong>arc</strong> yang modern.
+          Huruf A melambangkan <strong>Academic</strong>, <strong>Architecture</strong>, dan
+          <strong>Achievement</strong>. Dalam konteks universitas, huruf ini mencerminkan standar mutu,
+          ambisi pencapaian akademik, dan arah institusi yang unggul.
+        </p>
+        <p>
+          Bentuk lengkungan atau arc menggambarkan gerak maju, jalur perkembangan, dan transisi dari ide menuju
+          implementasi. Lengkungan ini melambangkan perjalanan mahasiswa dari tahap belajar, bereksperimen,
+          membangun proyek, hingga siap masuk ke dunia profesional.
+        </p>
+        <p>
+          Gaya futuristik yang terinspirasi dari estetika esport menegaskan identitas kampus digital yang kompetitif,
+          cepat, dan adaptif. Efek 3D memberi kesan solid, premium, dan berkelas, sedangkan warna ungu mengkilap
+          melambangkan kreativitas, kecerdasan, imajinasi, inovasi, dan visi masa depan.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>

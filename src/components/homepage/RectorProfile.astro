@@ -1,48 +1,79 @@
 ﻿---
-const { content } = Astro.props;
-const rector = content.rector;
+const rector = {
+  name: "Gland Jermano Blessed Siahaan, S.Kom., M.Kom., Ph.D., S.H., S.Ds., S.Psi., S.T.",
+  title: "Rektor Universitas ARCDEV Indonesia",
+  image: "/images/people/rector-gland-siahaan.png"
+};
+
+const education = [
+  "S1 Sistem Informasi, UASN Universitas Advent Surya Nusantara",
+  "S2 Computer Science and Engineering, National University of Singapore (NUS)",
+  "S3 Artificial Intelligence and Machine Learning, Harvard University",
+  "Advanced Executive Studies in Digital Strategy, Stanford University",
+  "Advanced Creative Technology and Design Leadership, Massachusetts Institute of Technology (MIT)",
+  "Global Leadership in Technology and Innovation, University of Oxford"
+];
+
+const background = [
+  "AI Engineer, ChatGPT-based Generative AI Systems",
+  "Software Engineer, Adobe, Meta, Microsoft, dan NVIDIA Technology Ecosystems",
+  "Data Engineer, Bloomberg, Alibaba Cloud, dan DCI Indonesia Digital Infrastructure Ecosystems",
+  "Director of Microsoft Indonesia Digital Transformation Profile",
+  "Creative Technology Strategist for IT, DKV, UI/UX, and Product Innovation",
+  "Enterprise AI and Cloud Architecture Advisor for global digital industry"
+];
+
+const skills = [
+  "Artificial Intelligence Engineering",
+  "Software Engineering",
+  "Data Engineering",
+  "Digital Product Design",
+  "UI/UX and Design System",
+  "Visual Communication Design",
+  "Cloud and Enterprise System",
+  "AI Product Strategy",
+  "Digital Law and Technology Ethics"
+];
 ---
 
-<section class="rector-v2 section-pad" id="rector">
+<section id="rektor" class="rector-section section-shell">
   <div class="container rector-grid">
     <div class="rector-visual" data-reveal>
-      <img
-        src={rector.photo}
-        alt={rector.name}
-        onerror="this.style.display='none'; this.parentElement.classList.add('is-missing');"
-      />
+      <div class="rector-photo-card" data-interactive-card>
+        <img src={rector.image} alt={rector.name} class="rector-photo" />
+        <div class="rector-photo-caption">Rektorat UARCDEV Gland Siahaan</div>
+      </div>
     </div>
 
-    <div class="rector-copy" data-reveal>
-      <span>Rector Profile</span>
-      <h2>{rector.name}</h2>
-      <h3>{rector.role}</h3>
-      <p>{rector.summary}</p>
+    <div class="rector-content" data-reveal>
+      <p class="section-kicker">RECTOR PROFILE</p>
+      <h2 class="section-title rector-name">{rector.name}</h2>
+      <p class="rector-role">{rector.title}</p>
 
-      <div class="rector-columns">
-        <div>
-          <strong>Education</strong>
+      <p class="section-description">
+        Rektor multidisipliner yang memadukan sistem informasi, teknik informatika, artificial intelligence, hukum digital,
+        desain komunikasi visual, psikologi, dan teknik. Kepemimpinannya menempatkan UARCDEV sebagai universitas teknologi
+        kreatif yang menghubungkan coding, design, intelligence, dan global innovation.
+      </p>
+
+      <div class="rector-info-grid">
+        <div class="info-card">
+          <h3>Education</h3>
           <ul>
-            {rector.education.map((item) => (
-              <li>{item}</li>
-            ))}
+            {education.map((item) => <li>{item}</li>)}
           </ul>
         </div>
 
-        <div>
-          <strong>Professional Background</strong>
+        <div class="info-card">
+          <h3>Professional Background</h3>
           <ul>
-            {rector.career.map((item) => (
-              <li>{item}</li>
-            ))}
+            {background.map((item) => <li>{item}</li>)}
           </ul>
         </div>
       </div>
 
-      <div class="expertise-list">
-        {rector.expertise.map((item) => (
-          <span>{item}</span>
-        ))}
+      <div class="skill-tags">
+        {skills.map((item) => <span>{item}</span>)}
       </div>
     </div>
   </div>

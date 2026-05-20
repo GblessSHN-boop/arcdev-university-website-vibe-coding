@@ -1,0 +1,531 @@
+﻿---
+const { lang = "id" } = Astro.props;
+const isEn = lang === "en";
+
+const nav = isEn
+  ? [
+      ["About", "#tentang"],
+      ["Rector", "#rektor"],
+      ["Faculties", "#fakultas"],
+      ["Excellence", "#unggulan"],
+      ["Admissions", "#pmb"]
+    ]
+  : [
+      ["Tentang", "#tentang"],
+      ["Rektor", "#rektor"],
+      ["Fakultas", "#fakultas"],
+      ["Pusat Unggulan", "#unggulan"],
+      ["PMB", "#pmb"]
+    ];
+
+const faculties = [
+  {
+    code: "FASILKOM",
+    name: "Fakultas Sistem Informasi dan Ilmu Komputer",
+    en: "Faculty of Information Systems and Computer Science",
+    desc: "Mengembangkan kompetensi sistem informasi, ilmu komputer, sains data, transformasi digital, dan tata kelola teknologi organisasi.",
+    programs: ["Sistem Informasi", "Ilmu Komputer", "Sains Data", "Informatika Bisnis", "Enterprise Information System"]
+  },
+  {
+    code: "FRTI",
+    name: "Fakultas Rekayasa Teknologi Informatika",
+    en: "Faculty of Informatics Technology Engineering",
+    desc: "Berfokus pada teknik informatika, rekayasa perangkat lunak, keamanan siber, cloud computing, IoT, dan platform engineering.",
+    programs: ["Teknik Informatika", "Rekayasa Perangkat Lunak", "Keamanan Siber", "Cloud Computing", "IoT Engineering"]
+  },
+  {
+    code: "FAIR",
+    name: "Fakultas Artificial Intelligence dan Robotika",
+    en: "Faculty of Artificial Intelligence and Robotics",
+    desc: "Mempersiapkan talenta AI, machine learning, deep learning, robotika, computer vision, NLP, dan generative AI.",
+    programs: ["AI Engineering", "Robotics", "Machine Learning", "Computer Vision", "Natural Language Processing"]
+  },
+  {
+    code: "FDKV",
+    name: "Fakultas Desain Komunikasi Visual",
+    en: "Faculty of Visual Communication Design",
+    desc: "Membangun kemampuan desain komunikasi visual, branding, tipografi, ilustrasi, fotografi, identitas visual, dan strategi komunikasi.",
+    programs: ["Desain Komunikasi Visual", "Desain Grafis Profesional", "Branding", "Ilustrasi Digital", "Visual Storytelling"]
+  },
+  {
+    code: "FMDI",
+    name: "Fakultas Media Digital dan Interaktif",
+    en: "Faculty of Digital and Interactive Media",
+    desc: "Mengembangkan talenta animasi, game, multimedia, film digital, broadcasting, virtual reality, augmented reality, dan produksi konten.",
+    programs: ["Animasi Digital", "Game Technology", "Multimedia", "Film Digital", "Virtual Reality"]
+  },
+  {
+    code: "FDIUX",
+    name: "Fakultas Desain Interaksi dan User Experience",
+    en: "Faculty of Interaction Design and User Experience",
+    desc: "Berfokus pada UI/UX, human computer interaction, product design, usability testing, design system, dan strategi produk digital.",
+    programs: ["UI/UX Design", "Human Computer Interaction", "Product Design", "Design System", "Interaction Design"]
+  },
+  {
+    code: "FBKD",
+    name: "Fakultas Bisnis Kreatif Digital",
+    en: "Faculty of Digital Creative Business",
+    desc: "Menghubungkan bisnis digital, startup, digital marketing, e-commerce, platform business, dan technopreneurship.",
+    programs: ["Bisnis Digital", "Digital Marketing", "Startup", "E-Commerce", "Creative Business"]
+  },
+  {
+    code: "FTBW",
+    name: "Fakultas Teknologi Blockchain dan Web3",
+    en: "Faculty of Blockchain Technology and Web3",
+    desc: "Mengembangkan kompetensi blockchain, smart contract, decentralized finance, digital asset, token economy, dan keamanan aset digital.",
+    programs: ["Blockchain Engineering", "Smart Contract", "Crypto Technology", "DeFi", "Digital Trust"]
+  },
+  {
+    code: "FKKS",
+    name: "Fakultas Komputasi Kuantum dan Kriptografi Siber",
+    en: "Faculty of Quantum Computing and Cyber Cryptography",
+    desc: "Berfokus pada quantum computing, cryptographic systems, post-quantum security, AI security, dan komunikasi digital aman.",
+    programs: ["Quantum Computing", "Cryptography", "Post-Quantum Security", "AI Security", "Secure Communication"]
+  },
+  {
+    code: "FSTA",
+    name: "Fakultas Space Technology dan Aerospace Informatics",
+    en: "Faculty of Space Technology and Aerospace Informatics",
+    desc: "Menggabungkan sistem satelit, aerospace software, remote sensing, geospatial intelligence, dan autonomous drone systems.",
+    programs: ["Satellite Systems", "Aerospace Software", "Remote Sensing", "Geospatial AI", "Drone Systems"]
+  },
+  {
+    code: "FSRCH",
+    name: "Fakultas Semikonduktor dan Rekayasa Chip",
+    en: "Faculty of Semiconductor and Chip Engineering",
+    desc: "Membangun kompetensi semiconductor engineering, chip design, microelectronics, embedded systems, processor architecture, dan AI chip.",
+    programs: ["Semiconductor Engineering", "Chip Design", "Microelectronics", "Embedded Systems", "AI Chip"]
+  },
+  {
+    code: "FDTII",
+    name: "Fakultas Digital Twin dan Teknologi Industri Cerdas",
+    en: "Faculty of Digital Twin and Intelligent Industry Technology",
+    desc: "Mengembangkan digital twin, simulasi industri, smart manufacturing, industrial AI, cyber-physical system, dan predictive maintenance.",
+    programs: ["Digital Twin", "Smart Manufacturing", "Simulation", "Cyber-Physical System", "Industrial IoT"]
+  }
+];
+
+const partners = [
+  ["Microsoft", "microsoft.svg", "Software Ecosystem", "MS"],
+  ["NVIDIA", "nvidia.svg", "GPU and AI Computing", "NV"],
+  ["Adobe", "adobe.svg", "Creative Digital Tools", "AD"],
+  ["Meta", "meta.svg", "Digital Product Ecosystem", "MT"],
+  ["OpenAI", "openai.svg", "Generative AI", "AI"],
+  ["Google Cloud", "google-cloud.svg", "Cloud and Data", "GC"],
+  ["AWS", "aws.svg", "Cloud Infrastructure", "AWS"],
+  ["IBM", "ibm.svg", "Enterprise AI", "IBM"],
+  ["Oracle", "oracle.svg", "Database and Enterprise", "OR"],
+  ["Cisco", "cisco.svg", "Network Infrastructure", "CS"],
+  ["Intel", "intel.svg", "Processor Technology", "IN"],
+  ["AMD", "amd.svg", "High Performance Computing", "AMD"],
+  ["Arm", "arm.svg", "Chip Architecture", "ARM"],
+  ["Qualcomm", "qualcomm.svg", "Mobile Computing", "QC"],
+  ["Bloomberg", "bloomberg.svg", "Data Engineering", "BB"],
+  ["Alibaba Cloud", "alibaba-cloud.svg", "Cloud Ecosystem", "AC"],
+  ["Tencent Cloud", "tencent-cloud.svg", "Digital Infrastructure", "TC"],
+  ["Huawei Cloud", "huawei-cloud.svg", "Cloud and Network", "HW"],
+  ["DCI Indonesia", "dci-indonesia.svg", "Data Center", "DCI"],
+  ["Telkom Indonesia", "telkom-indonesia.svg", "Digital Connectivity", "TLK"],
+  ["Gojek", "gojek.svg", "Product Engineering", "GJ"],
+  ["Tokopedia", "tokopedia.svg", "E-Commerce Platform", "TKP"],
+  ["Traveloka", "traveloka.svg", "Digital Product", "TVL"],
+  ["Grab", "grab.svg", "Super App Ecosystem", "GR"],
+  ["Shopee", "shopee.svg", "Digital Commerce", "SP"]
+];
+
+const centers = [
+  ["FAIR", "ARCDEV NVIDIA AI Innovation Center", "AI, GPU computing, deep learning, generative AI, computer vision, dan NLP."],
+  ["FRTI", "ARCDEV Microsoft Cloud and Software Academy", "Cloud computing, software engineering, DevOps, enterprise system, dan solution architecture."],
+  ["FDKV, FMDI, FDIUX", "ARCDEV Adobe Creative Digital Lab", "Desain, animasi, motion graphic, UI/UX, digital content, dan produksi kreatif."],
+  ["FTBW", "ARCDEV Web3 and Blockchain Research Center", "Blockchain, smart contract, DeFi, digital asset, dan keamanan sistem terdesentralisasi."],
+  ["FKKS", "ARCDEV Quantum and Cryptographic Intelligence Lab", "Quantum computing, kriptografi, post-quantum security, dan komunikasi digital aman."],
+  ["FDTII", "ARCDEV Digital Twin and Smart Industry Center", "Industrial simulation, digital twin, predictive maintenance, industrial AI, dan IoT industri."]
+];
+
+const news = [
+  ["Academic", "ARCDEV memperluas struktur akademik menjadi dua belas fakultas teknologi kreatif dan inovasi global."],
+  ["AI Center", "ARCDEV NVIDIA AI Innovation Center disiapkan sebagai pusat unggulan kecerdasan buatan dan GPU computing."],
+  ["Digital Campus", "ARCDEV mengembangkan portal digital kampus untuk profil fakultas, PMB, newsroom, dan layanan akademik."]
+];
+---
+
+<div class="u6-page">
+  <header class="u6-header">
+    <a class="u6-brand" href={isEn ? "/en" : "/id"} aria-label="Universitas ARCDEV">
+      <img src="/images/brand/arcdev-logo.png" alt="ARCDEV logo" class="u6-brand-logo" />
+      <span class="u6-brand-copy">
+        <strong>UNIVERSITAS ARCDEV</strong>
+        <small>CREATIVE TECHNOLOGY UNIVERSITY</small>
+      </span>
+    </a>
+
+    <nav class="u6-nav" aria-label="Main navigation">
+      {nav.map(([label, href]) => <a href={href}>{label}</a>)}
+    </nav>
+
+    <div class="u6-actions">
+      <a class="u6-lang" href={isEn ? "/id" : "/en"}>{isEn ? "ID" : "EN"}</a>
+      <a class="u6-cta" href={isEn ? "/en/admissions" : "/id/penerimaan-mahasiswa-baru"}>
+        {isEn ? "Apply Now" : "Daftar Sekarang"}
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="u6-hero">
+      <div class="u6-hero-grid">
+        <div class="u6-hero-copy u6-reveal">
+          <p class="u6-eyebrow">UNIVERSITAS ARCDEV INDONESIA</p>
+          <div class="u6-hero-kicker">
+            <span>01</span>
+            <strong>Build the future through code, design, intelligence, and innovation</strong>
+          </div>
+          <h1>Universitas ARCDEV, Kampus Teknologi Kreatif untuk Generasi Masa Depan.</h1>
+          <p class="u6-hero-text">
+            UARCDEV dirancang sebagai ekosistem pendidikan tinggi berbasis riset akademik,
+            coding, desain, artificial intelligence, software engineering, bisnis digital,
+            dan inovasi industri masa depan.
+          </p>
+          <div class="u6-hero-buttons">
+            <a href="#pmb" class="u6-btn u6-btn-light">Mulai Pendaftaran</a>
+            <a href="#fakultas" class="u6-btn u6-btn-outline">Lihat Fakultas</a>
+          </div>
+        </div>
+
+        <aside class="u6-hero-panel u6-reveal" data-interactive-card>
+          <div class="u6-panel-top">
+            <span>EST. 2026</span>
+            <span>PMB</span>
+          </div>
+          <h2>Ekosistem ARCDEV</h2>
+          <p>
+            Dua belas fakultas strategis disiapkan untuk membangun talenta digital,
+            AI engineer, software engineer, designer, founder startup, dan inovator teknologi.
+          </p>
+          <a href="#tentang">Jelajahi UARCDEV</a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="u6-stats">
+      <div class="u6-stat"><strong>12</strong><span>Fakultas strategis</span><p>Teknologi, AI, desain, bisnis digital, Web3, quantum, chip, dan digital twin.</p></div>
+      <div class="u6-stat"><strong>120+</strong><span>Program akademik</span><p>Jenjang S1, S2, dan S3 berbasis kebutuhan industri masa depan.</p></div>
+      <div class="u6-stat"><strong>8</strong><span>Pusat unggulan</span><p>AI, cloud, creative digital, blockchain, quantum, satellite, chip, dan smart industry.</p></div>
+      <div class="u6-stat"><strong>2</strong><span>Bahasa website</span><p>Indonesia dan English untuk identitas akademik global.</p></div>
+    </section>
+
+    <section id="rektor" class="u6-section u6-rector">
+      <div class="u6-two-col">
+        <div class="u6-rector-photo-shell u6-reveal" data-interactive-card>
+          <img src="/images/people/rector-gland-siahaan.png" alt="Gland Jermano Blessed Siahaan" class="u6-rector-photo" />
+          <div class="u6-rector-caption">Rektorat UARCDEV Gland Siahaan</div>
+        </div>
+
+        <div class="u6-rector-content u6-reveal">
+          <p class="u6-section-code">RECTOR PROFILE</p>
+          <h2>Gland Jermano Blessed Siahaan, S.Kom., M.Kom., Ph.D., S.H., S.Ds., S.Psi., S.T.</h2>
+          <h3>Rektor Universitas ARCDEV Indonesia</h3>
+          <p>
+            Rektor multidisipliner yang memadukan sistem informasi, teknik informatika,
+            artificial intelligence, hukum digital, desain komunikasi visual, psikologi,
+            dan teknik. Kepemimpinannya menempatkan UARCDEV sebagai universitas teknologi
+            kreatif yang menghubungkan coding, design, intelligence, dan global innovation.
+          </p>
+
+          <div class="u6-rector-cards">
+            <article data-interactive-card>
+              <h4>Education</h4>
+              <ul>
+                <li>S1 Sistem Informasi, UASN Universitas Advent Surya Nusantara</li>
+                <li>S2 Computer Science and Engineering, National University of Singapore (NUS)</li>
+                <li>S3 Artificial Intelligence and Machine Learning, Harvard University</li>
+                <li>Advanced Executive Studies in Digital Strategy, Stanford University</li>
+                <li>Advanced Creative Technology and Design Leadership, Massachusetts Institute of Technology (MIT)</li>
+                <li>Global Leadership in Technology and Innovation, University of Oxford</li>
+              </ul>
+            </article>
+
+            <article data-interactive-card>
+              <h4>Professional Background</h4>
+              <ul>
+                <li>AI Engineer, ChatGPT-based Generative AI Systems</li>
+                <li>Software Engineer, Adobe, Meta, Microsoft, dan NVIDIA Technology Ecosystems</li>
+                <li>Data Engineer, Bloomberg, Alibaba Cloud, dan DCI Indonesia Digital Infrastructure Ecosystems</li>
+                <li>Director of Microsoft Indonesia Digital Transformation Profile</li>
+                <li>Creative Technology Strategist for IT, DKV, UI/UX, and Product Innovation</li>
+                <li>Enterprise AI and Cloud Architecture Advisor for global digital industry</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="u6-skill-tags">
+            {[
+              "Artificial Intelligence Engineering",
+              "Software Engineering",
+              "Data Engineering",
+              "Digital Product Design",
+              "UI/UX and Design System",
+              "Visual Communication Design",
+              "Cloud and Enterprise System",
+              "AI Product Strategy",
+              "Digital Law and Technology Ethics"
+            ].map((item) => <span>{item}</span>)}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tentang" class="u6-section u6-philosophy">
+      <div class="u6-section-head u6-reveal">
+        <p class="u6-section-code">UARCDEV IDENTITY</p>
+        <h2>Identitas, Sejarah, Filosofi Nama, dan Filosofi Logo UARCDEV</h2>
+        <p>
+          Universitas ARCDEV Indonesia dibangun sebagai kampus teknologi kreatif yang
+          menggabungkan riset akademik, pengembangan sistem digital, kreativitas,
+          dan kesiapan industri masa depan.
+        </p>
+      </div>
+
+      <div class="u6-identity-grid">
+        {[
+          ["Nama resmi", "Universitas ARCDEV Indonesia"],
+          ["Singkatan", "UARCDEV"],
+          ["Nama internasional", "ARCDEV University"],
+          ["Kepanjangan filosofis", "Academic Research & Creative Development"],
+          ["Makna teknologis", "Architecture Development, yaitu pengembangan arsitektur sistem, perangkat lunak, dan teknologi digital."]
+        ].map(([label, value]) => (
+          <article class="u6-identity-card u6-reveal" data-interactive-card>
+            <span>{label}</span>
+            <strong>{value}</strong>
+          </article>
+        ))}
+      </div>
+
+      <div class="u6-philosophy-grid">
+        <article class="u6-long-card u6-reveal" data-interactive-card>
+          <h3>Sejarah dan Arah Pengembangan</h3>
+          <p>
+            UARCDEV lahir dari gagasan bahwa pendidikan tinggi teknologi tidak cukup
+            hanya mengajarkan teori, tetapi harus membentuk ekosistem belajar yang
+            dekat dengan praktik industri, riset terapan, pengembangan produk digital,
+            dan kompetisi teknologi profesional.
+          </p>
+          <p>
+            Sejak awal, UARCDEV diarahkan sebagai kampus digital yang menghubungkan
+            web engineering, software development, artificial intelligence, desain
+            komunikasi visual, digital business, game development, dan esport coding
+            dalam satu jalur akademik yang terstruktur.
+          </p>
+        </article>
+
+        <article class="u6-long-card u6-reveal" data-interactive-card>
+          <h3>Filosofi Nama ARCDEV</h3>
+          <p>
+            ARCDEV merupakan gabungan dari ARC dan DEV. ARC dimaknai sebagai
+            Architecture, yaitu struktur, rancangan, dan fondasi teknologi yang tertata.
+            Dalam pendidikan tinggi, ARC juga merepresentasikan arah akademik yang
+            sistematis, riset yang terukur, dan pengembangan keilmuan yang memiliki
+            kerangka jelas.
+          </p>
+          <p>
+            DEV berasal dari Developer dan Development. Makna ini menegaskan bahwa
+            universitas tidak hanya berorientasi pada teori, tetapi juga pada kemampuan
+            menciptakan, membangun, dan mengembangkan solusi nyata berbasis kebutuhan
+            industri.
+          </p>
+          <p>
+            Academic Research & Creative Development menjadi kepanjangan utama karena
+            cakupannya luas. Adapun Architecture Development tetap digunakan sebagai
+            filosofi teknis yang menjelaskan fokus ARCDEV pada pembangunan arsitektur
+            sistem digital yang kuat, efisien, dan berorientasi masa depan.
+          </p>
+        </article>
+
+        <article class="u6-long-card u6-reveal u6-wide" data-interactive-card>
+          <h3>Filosofi Logo ARCDEV</h3>
+          <p>
+            Logo ARCDEV berbentuk huruf A dengan gaya arc modern. Huruf A melambangkan
+            Academic, Architecture, dan Achievement. Bentuk lengkungan pada logo
+            menggambarkan gerak maju, jalur perkembangan, dan transisi dari ide menuju
+            implementasi.
+          </p>
+          <p>
+            Gaya futuristik yang terinspirasi dari estetika esport menunjukkan bahwa
+            UARCDEV tidak hanya membawa identitas akademik konvensional, tetapi juga
+            membangun karakter kampus digital yang kompetitif, cepat, dan adaptif.
+            Efek 3D mencerminkan kesan solid, premium, dan berkelas.
+          </p>
+          <p>
+            Warna ungu mengkilap melambangkan kreativitas, kecerdasan, imajinasi,
+            inovasi, dan visi masa depan. Kilauan warna ungu memperkuat citra premium,
+            profesional, dan visioner sebagai universitas teknologi, riset kreatif,
+            dan pengembangan digital.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="fakultas" class="u6-section u6-faculties">
+      <div class="u6-section-head u6-reveal">
+        <p class="u6-section-code">ACADEMIC ECOSYSTEM</p>
+        <h2>Dua Belas Fakultas untuk Teknologi, Desain, AI, dan Industri Masa Depan</h2>
+        <p>
+          Setiap fakultas memiliki fokus akademik yang jelas agar sistem informasi,
+          teknik informatika, AI, DKV, media digital, UI/UX, bisnis digital, Web3,
+          quantum, space technology, chip, dan digital twin tidak tercampur secara akademik.
+        </p>
+      </div>
+
+      <div class="u6-faculty-grid">
+        {faculties.map((faculty) => (
+          <article class="u6-faculty-card u6-reveal" data-interactive-card>
+            <div class="u6-card-top">
+              <strong>{faculty.code}</strong>
+              <span>Academic Faculty</span>
+            </div>
+            <h3>{faculty.name}</h3>
+            <h4>{faculty.en}</h4>
+            <p>{faculty.desc}</p>
+            <ul>
+              {faculty.programs.map((program) => <li>{program}</li>)}
+            </ul>
+            <a href={isEn ? "/en/faculties" : "/id/fakultas"}>Lihat Fakultas</a>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="u6-section u6-partners">
+      <div class="u6-partner-layout">
+        <div class="u6-section-head u6-reveal">
+          <p class="u6-section-code">INDUSTRY ECOSYSTEM</p>
+          <h2>Ekosistem Industri Teknologi</h2>
+          <p>
+            ARCDEV diarahkan untuk menghubungkan pembelajaran, riset, desain produk
+            digital, cloud, AI, data, software engineering, infrastruktur, dan ekosistem
+            teknologi global.
+          </p>
+        </div>
+
+        <div class="u6-partner-grid">
+          {partners.map(([name, file, field, short]) => (
+            <article class="u6-partner-card u6-reveal" data-interactive-card>
+              <div class="u6-partner-logo-box">
+                <img
+                  class="u6-partner-logo"
+                  src={`/images/partners/${file}`}
+                  alt={`${name} logo`}
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span class="u6-partner-fallback">{short}</span>
+              </div>
+              <h3>{name}</h3>
+              <p>{field}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+
+      <div class="u6-marquee" aria-hidden="true">
+        <div class="u6-marquee-track">
+          {partners.concat(partners).map(([name]) => <span>{name}</span>)}
+        </div>
+      </div>
+    </section>
+
+    <section id="unggulan" class="u6-section u6-centers">
+      <div class="u6-section-head u6-reveal">
+        <p class="u6-section-code">CENTERS OF EXCELLENCE</p>
+        <h2>Pusat Unggulan untuk Riset dan Industri Global</h2>
+        <p>
+          Pusat unggulan menghubungkan fakultas dengan riset, produk, sertifikasi,
+          dan kolaborasi industri agar pembelajaran tidak berhenti pada teori.
+        </p>
+      </div>
+
+      <div class="u6-center-grid">
+        {centers.map(([tag, title, desc]) => (
+          <article class="u6-center-card u6-reveal" data-interactive-card>
+            <span>{tag}</span>
+            <h3>{title}</h3>
+            <p>{desc}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section id="pmb" class="u6-admission">
+      <div class="u6-admission-grid">
+        <div class="u6-reveal">
+          <p class="u6-section-code">ADMISSION PATHWAY</p>
+          <h2>Jalur Pendaftaran untuk Talenta Digital Masa Depan</h2>
+          <p>
+            Penerimaan mahasiswa baru dirancang sebagai pengalaman digital yang jelas,
+            terarah, dan informatif agar calon mahasiswa dapat memilih fakultas, program
+            studi, jalur pembiayaan, dan peluang karier secara rasional.
+          </p>
+          <div class="u6-hero-buttons">
+            <a href="/id/penerimaan-mahasiswa-baru" class="u6-btn u6-btn-light">Daftar Sekarang</a>
+            <a href="/id/program-studi" class="u6-btn u6-btn-outline">Lihat Program</a>
+          </div>
+        </div>
+
+        <div class="u6-steps u6-reveal">
+          {["Pilih Fakultas", "Konsultasi Program", "Lengkapi Berkas", "Finalisasi PMB"].map((step, index) => (
+            <div>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <strong>{step}</strong>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="u6-section u6-news">
+      <div class="u6-section-head u6-reveal">
+        <p class="u6-section-code">ARCDEV NEWSROOM</p>
+        <h2>Informasi Kampus dalam Format Editorial</h2>
+      </div>
+
+      <div class="u6-news-grid">
+        {news.map(([tag, title], index) => (
+          <article class={`u6-news-card u6-reveal ${index === 0 ? "is-featured" : ""}`} data-interactive-card>
+            <span>{tag}</span>
+            <h3>{title}</h3>
+            <a href={isEn ? "/en/news" : "/id/berita"}>Baca informasi</a>
+          </article>
+        ))}
+      </div>
+    </section>
+  </main>
+
+  <footer class="u6-footer">
+    <div>
+      <img src="/images/brand/arcdev-logo.png" alt="ARCDEV logo" />
+      <p>
+        Universitas ARCDEV Indonesia adalah prototype website kampus modern untuk
+        profil bilingual, fakultas, PMB, newsroom, dan portal digital.
+      </p>
+    </div>
+
+    <div>
+      <h3>Faculties</h3>
+      {faculties.slice(0, 8).map((faculty) => <a href="#fakultas">{faculty.name}</a>)}
+    </div>
+
+    <div>
+      <h3>Access</h3>
+      <a href="#tentang">Tentang</a>
+      <a href="#rektor">Rektor</a>
+      <a href="#fakultas">Fakultas</a>
+      <a href="#pmb">PMB</a>
+    </div>
+
+    <div>
+      <h3>Contact</h3>
+      <p>Medan, North Sumatra, Indonesia</p>
+      <p>ARCDEV Digital Campus</p>
+    </div>
+  </footer>
+</div>
