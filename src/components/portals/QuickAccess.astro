@@ -1,0 +1,20 @@
+﻿---
+import { portals } from "../../data/portals.js";
+---
+
+<section class="section">
+  <div class="container">
+    <p class="eyebrow">Digital Campus Portal</p>
+    <h2 class="section-title">Akses Cepat Layanan ARCDEV</h2>
+    <p class="section-lead">Satu pintu digital untuk membantu calon mahasiswa, mahasiswa aktif, dosen, staf, alumni, dan mitra mengakses informasi utama kampus.</p>
+
+    <div class="grid-4" style="margin-top: 36px;">
+      {portals.map((portal) => (
+        <article class="card">
+          <h3>{portal.title}</h3>
+          <p>{portal.description}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

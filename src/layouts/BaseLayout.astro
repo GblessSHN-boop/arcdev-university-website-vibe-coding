@@ -1,0 +1,22 @@
+﻿---
+import "../styles/global.css";
+
+const {
+  title = "ARCDEV University",
+  description = "Website resmi konseptual Universitas ARCDEV.",
+  lang = "id"
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

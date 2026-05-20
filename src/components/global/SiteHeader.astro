@@ -1,0 +1,17 @@
+﻿---
+import { navigation } from "../../data/navigation.js";
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="/id">ARCDEV</a>
+
+    <nav class="nav" aria-label="Main navigation">
+      {navigation.map((item) => (
+        <a href={item.href}>{item.label}</a>
+      ))}
+    </nav>
+
+    <a class="btn btn-primary" href="/id/penerimaan-mahasiswa-baru">Daftar Sekarang</a>
+  </div>
+</header>

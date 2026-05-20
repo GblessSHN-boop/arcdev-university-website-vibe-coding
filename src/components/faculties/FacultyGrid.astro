@@ -1,0 +1,22 @@
+﻿---
+import { faculties } from "../../data/faculties.js";
+---
+
+<section class="section section-soft">
+  <div class="container">
+    <p class="eyebrow">Academic Pathway</p>
+    <h2 class="section-title">Pilih Fakultas dan Jalur Akademik Anda</h2>
+    <p class="section-lead">ARCDEV mengembangkan bidang ekonomi, teknologi informasi, kesehatan, dan teologi dalam satu ekosistem akademik yang tertata.</p>
+
+    <div class="grid-4" style="margin-top: 36px;">
+      {faculties.map((faculty) => (
+        <article class="card">
+          <h3>{faculty.name}</h3>
+          <p><strong>{faculty.englishName}</strong></p>
+          <p>{faculty.description}</p>
+          <a class="btn btn-primary" href={faculty.href}>Lihat Fakultas</a>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
