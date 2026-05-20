@@ -2,8 +2,8 @@
 import "../styles/global.css";
 
 const {
-  title = "Universitas ARCDEV Indonesia",
-  description = "Universitas ARCDEV Indonesia adalah kampus teknologi kreatif untuk riset akademik, coding, desain, artificial intelligence, dan inovasi digital.",
+  title = "ARCDEV University",
+  description = "Website resmi konseptual Universitas ARCDEV.",
   lang = "id"
 } = Astro.props;
 ---
@@ -15,13 +15,12 @@ const {
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#4B1FA6" />
-    <link rel="icon" href="/images/brand/arcdev-logo.png" />
+    <link rel="icon" type="image/png" href="/images/brand/arcdev-logo.png" />
     <link rel="apple-touch-icon" href="/images/brand/arcdev-logo.png" />
     <title>{title}</title>
   </head>
   <body>
     <slot />
-
     <script>
       import "../scripts/main.js";
     </script>
