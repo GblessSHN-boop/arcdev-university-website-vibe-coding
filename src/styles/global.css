@@ -2993,3 +2993,94 @@ body {
 }
 
 /* === ARCDEV QUALITY DESIGN V9 END === */
+
+
+/* === ARCDEV PRESENTATION VIDEO START === */
+
+.q-video-hero {
+  max-width: var(--q-max);
+  margin: 0 auto;
+  padding: 46px clamp(24px, 4vw, 64px) 0;
+}
+
+.q-video-shell {
+  position: relative;
+  min-height: clamp(360px, 56vw, 720px);
+  border: 1px solid rgba(75, 31, 166, 0.18);
+  background: #090512;
+  overflow: hidden;
+  box-shadow: 0 34px 90px rgba(15, 23, 42, 0.16);
+}
+
+.q-presentation-video {
+  width: 100%;
+  height: 100%;
+  min-height: clamp(360px, 56vw, 720px);
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.q-video-shell::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(9, 5, 18, 0.82) 0%, rgba(9, 5, 18, 0.46) 38%, rgba(9, 5, 18, 0.08) 100%),
+    linear-gradient(180deg, rgba(9, 5, 18, 0.10) 0%, rgba(9, 5, 18, 0.48) 100%);
+  pointer-events: none;
+}
+
+.q-video-overlay {
+  position: absolute;
+  left: clamp(26px, 5vw, 72px);
+  bottom: clamp(26px, 5vw, 72px);
+  z-index: 2;
+  max-width: 620px;
+  color: #ffffff;
+}
+
+.q-video-overlay .q-kicker {
+  color: #c7b5ff;
+}
+
+.q-video-overlay h2 {
+  margin: 0;
+  max-width: 660px;
+  color: #ffffff;
+  font-size: clamp(2rem, 4vw, 4.4rem);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  font-weight: 850;
+}
+
+.q-video-overlay p {
+  margin: 18px 0 0;
+  max-width: 580px;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: clamp(1rem, 1.2vw, 1.18rem);
+  line-height: 1.72;
+}
+
+@media (max-width: 760px) {
+  .q-video-hero {
+    padding-top: 28px;
+  }
+
+  .q-video-shell,
+  .q-presentation-video {
+    min-height: 420px;
+  }
+
+  .q-video-shell::after {
+    background: linear-gradient(180deg, rgba(9, 5, 18, 0.10) 0%, rgba(9, 5, 18, 0.82) 100%);
+  }
+
+  .q-video-overlay {
+    left: 22px;
+    right: 22px;
+    bottom: 28px;
+  }
+}
+
+/* === ARCDEV PRESENTATION VIDEO END === */
