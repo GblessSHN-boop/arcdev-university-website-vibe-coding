@@ -2,12 +2,14 @@
 const { page, lang = "id" } = Astro.props;
 const isEn = lang === "en";
 const homeHref = isEn ? "/en" : "/id";
-const otherLangHref = isEn ? "/id" : "/en";
+const switchHref = isEn ? "/id" : "/en";
+const facultyHref = isEn ? "/en/faculties" : "/id/fakultas";
+const admissionHref = isEn ? "/en/admissions" : "/id/penerimaan-mahasiswa-baru";
 ---
 
-<div class="arc-static-page">
-  <header class="arc-page-header">
-    <a class="arc-page-brand" href={homeHref}>
+<div class="q-static">
+  <header class="q-header">
+    <a class="q-brand" href={homeHref}>
       <img src="/images/brand/arcdev-logo.png" alt="ARCDEV logo" />
       <span>
         <strong>{isEn ? "ARCDEV University" : "Universitas ARCDEV"}</strong>
@@ -15,45 +17,41 @@ const otherLangHref = isEn ? "/id" : "/en";
       </span>
     </a>
 
-    <nav>
+    <nav class="q-nav">
       <a href={homeHref}>{isEn ? "Home" : "Beranda"}</a>
-      <a href={isEn ? "/en/faculties" : "/id/fakultas"}>{isEn ? "Faculties" : "Fakultas"}</a>
-      <a href={isEn ? "/en/admissions" : "/id/penerimaan-mahasiswa-baru"}>{isEn ? "Admissions" : "PMB"}</a>
-      <a href={otherLangHref}>{isEn ? "ID" : "EN"}</a>
+      <a href={facultyHref}>{isEn ? "Faculties" : "Fakultas"}</a>
+      <a href={admissionHref}>{isEn ? "Admissions" : "PMB"}</a>
     </nav>
+
+    <div class="q-actions">
+      <a class="q-lang" href={switchHref}>{isEn ? "ID" : "EN"}</a>
+    </div>
   </header>
 
   <main>
-    <section class="arc-static-hero">
-      <div class="arc-static-hero-copy reveal">
-        <p>{page.eyebrow}</p>
+    <section class="q-static-hero">
+      <div data-reveal>
+        <p class="q-kicker">{page.eyebrow}</p>
         <h1>{page.title}</h1>
-        <span>{page.lead}</span>
+        <p>{page.lead}</p>
         <a href={page.ctaHref}>{page.cta}</a>
       </div>
 
-      <aside class="arc-static-panel reveal" data-interactive-card>
+      <aside data-reveal data-interactive-card>
         <strong>UARCDEV</strong>
-        <p>
-          Academic Research & Creative Development, kampus teknologi kreatif untuk coding,
-          desain, AI, produk digital, dan inovasi industri masa depan.
-        </p>
+        <p>Academic Research & Creative Development.</p>
+        <span>Architecture Development for digital technology.</span>
       </aside>
     </section>
 
-    <section class="arc-static-content">
-      {page.sections.map((section, index) => (
-        <article class="arc-static-card reveal" data-interactive-card>
+    <section class="q-static-grid">
+      {page.sections.map(([title, body], index) => (
+        <article data-reveal data-interactive-card>
           <span>{String(index + 1).padStart(2, "0")}</span>
-          <h2>{section.title}</h2>
-          <p>{section.body}</p>
+          <h2>{title}</h2>
+          <p>{body}</p>
         </article>
       ))}
     </section>
   </main>
-
-  <footer class="arc-static-footer">
-    <p>Copyright © 2026 Universitas ARCDEV Indonesia.</p>
-    <a href={homeHref}>{isEn ? "Back to homepage" : "Kembali ke beranda"}</a>
-  </footer>
 </div>

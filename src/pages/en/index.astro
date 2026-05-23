@@ -1,34 +1,12 @@
 ﻿---
-import UniversityPhilosophy from "../../components/homepage/UniversityPhilosophy.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import SiteHeader from "../../components/global/SiteHeader.astro";
-import SiteFooter from "../../components/global/SiteFooter.astro";
-import HeroEditorial from "../../components/homepage/HeroEditorial.astro";
-import AcademicStats from "../../components/homepage/AcademicStats.astro";
-import PartnerStrip from "../../components/homepage/PartnerStrip.astro";
-import RectorProfile from "../../components/homepage/RectorProfile.astro";
-import FacultyMatrix from "../../components/homepage/FacultyMatrix.astro";
-import CentersGrid from "../../components/homepage/CentersGrid.astro";
-import AdmissionsBlock from "../../components/homepage/AdmissionsBlock.astro";
-import NewsroomEditorial from "../../components/homepage/NewsroomEditorial.astro";
-import { homepageContent } from "../../data/homepageContent.js";
-
-const content = homepageContent.en;
+import ArcdevLanding from "../../components/homepage/ArcdevLanding.astro";
 ---
 
-<BaseLayout title={content.title} description={content.description} lang="en">
-  <SiteHeader content={content} />
-  <main>
-    <HeroEditorial content={content} />
-    <AcademicStats content={content} />
-    <UniversityPhilosophy />
-    <PartnerStrip content={content} />
-    <RectorProfile content={content} />
-    <FacultyMatrix content={content} />
-    <CentersGrid content={content} />
-    <AdmissionsBlock content={content} />
-    <NewsroomEditorial content={content} />
-  </main>
-  <SiteFooter content={content} />
+<BaseLayout
+  title="ARCDEV University | Creative Technology University"
+  description="A creative technology university for software, AI, design, and digital industry."
+  lang="en"
+>
+  <ArcdevLanding lang="en" />
 </BaseLayout>
-

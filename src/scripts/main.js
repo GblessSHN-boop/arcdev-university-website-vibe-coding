@@ -148,7 +148,10 @@ console.log("ARCDEV UI/UX v5 initialized.");
 
 
 
-// === ARCDEV CLEAN MOTION V8 START ===
+
+
+
+// === ARCDEV CLEAN MOTION V9 START ===
 (() => {
   const ready = (fn) => {
     if (document.readyState !== "loading") fn();
@@ -156,36 +159,24 @@ console.log("ARCDEV UI/UX v5 initialized.");
   };
 
   ready(() => {
-    document.querySelectorAll(".arc-cursor, .u6-cursor, .cursor-orb, .custom-cursor").forEach((el) => {
-      el.remove();
-    });
+    document.querySelectorAll(".arc-cursor, .cursor-orb, .custom-cursor, .u6-cursor").forEach((el) => el.remove());
 
-    const revealItems = document.querySelectorAll(
-      ".reveal, [data-reveal], .faculty-card-v2, .faculty-card, .partner-ticker-card, .partner-card, .center-card, .news-side, .news-main, .info-card, .rector-copy, .rector-visual, .arc-static-card, .arc-static-panel"
-    );
-
+    const revealItems = document.querySelectorAll("[data-reveal]");
     if ("IntersectionObserver" in window) {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (!entry.isIntersecting) return;
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
-          });
-        },
-        { threshold: 0.12, rootMargin: "0px 0px -80px 0px" }
-      );
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        });
+      }, { threshold: 0.12, rootMargin: "0px 0px -80px 0px" });
 
       revealItems.forEach((item) => observer.observe(item));
     } else {
       revealItems.forEach((item) => item.classList.add("is-visible"));
     }
 
-    const interactiveItems = document.querySelectorAll(
-      "[data-interactive-card], .faculty-card-v2, .faculty-card, .partner-ticker-card, .partner-card, .center-card, .news-side, .news-main, .info-card, .arc-static-card, .arc-static-panel"
-    );
-
-    interactiveItems.forEach((card) => {
+    document.querySelectorAll("[data-interactive-card]").forEach((card) => {
       card.addEventListener("pointermove", (event) => {
         const rect = card.getBoundingClientRect();
         const x = ((event.clientX - rect.left) / rect.width) * 100;
@@ -201,18 +192,12 @@ console.log("ARCDEV UI/UX v5 initialized.");
     });
 
     document.querySelectorAll("img[src*='/images/partners/']").forEach((img) => {
-      const markMissing = () => {
-        const card = img.closest(".partner-ticker-card, .partner-card, .arc-partner-card, article, div");
-        if (card) card.classList.add("is-logo-missing");
+      img.addEventListener("error", () => {
         img.style.display = "none";
-      };
-
-      img.addEventListener("error", markMissing);
-
-      if (img.complete && img.naturalWidth === 0) {
-        markMissing();
-      }
+        const parent = img.closest(".q-partner-card");
+        if (parent) parent.classList.add("is-missing-logo");
+      });
     });
   });
 })();
-// === ARCDEV CLEAN MOTION V8 END ===
+// === ARCDEV CLEAN MOTION V9 END ===

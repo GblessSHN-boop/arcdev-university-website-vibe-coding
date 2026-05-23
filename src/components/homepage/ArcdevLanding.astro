@@ -1,0 +1,271 @@
+﻿---
+const { lang = "id" } = Astro.props;
+const isEn = lang === "en";
+
+const copy = isEn
+  ? {
+      home: "/en",
+      switchHref: "/id",
+      switchLabel: "ID",
+      applyHref: "/en/admissions",
+      applyLabel: "Apply Now",
+      brand: "ARCDEV University",
+      subtitle: "Creative Technology University",
+      nav: [
+        ["About", "/en/about"],
+        ["Rector", "#rector"],
+        ["Faculties", "/en/faculties"],
+        ["Centers", "#centers"],
+        ["Admissions", "/en/admissions"]
+      ],
+      eyebrow: "Academic Research & Creative Development",
+      title: "A creative technology university for software, AI, design, and digital industry.",
+      lead: "ARCDEV University connects academic research, software engineering, artificial intelligence, visual design, product development, and global technology ecosystems through project-based learning.",
+      primary: "Explore Faculties",
+      secondary: "View Philosophy",
+      identityTitle: "Universitas ARCDEV Indonesia",
+      identityLead: "UARCDEV is built on Academic Research & Creative Development, with Architecture Development as its technical meaning for system, software, and digital technology development.",
+      rectorTitle: "Rector of ARCDEV University",
+      rectorName: "Gland Siahaan",
+      rectorText: "A multidisciplinary rector profile combining artificial intelligence, software engineering, data engineering, visual communication design, product strategy, and digital technology leadership.",
+      philosophyTitle: "ARCDEV philosophy",
+      philosophyLead: "ARCDEV combines ARC as structured architecture and DEV as development. The name reflects an institution that builds academic direction, creative research, and real digital products.",
+      partnerTitle: "Global technology ecosystem",
+      partnerLead: "ARCDEV is conceptually connected with a wide digital ecosystem across software, AI, cloud, semiconductor, data, platform business, and creative technology.",
+      ctaTitle: "Build a portfolio before graduation.",
+      ctaLead: "ARCDEV students are directed to graduate with academic knowledge, technical skill, and real project experience."
+    }
+  : {
+      home: "/id",
+      switchHref: "/en",
+      switchLabel: "EN",
+      applyHref: "/id/penerimaan-mahasiswa-baru",
+      applyLabel: "Daftar Sekarang",
+      brand: "Universitas ARCDEV",
+      subtitle: "Creative Technology University",
+      nav: [
+        ["Tentang", "/id/tentang"],
+        ["Rektor", "#rector"],
+        ["Fakultas", "/id/fakultas"],
+        ["Pusat Unggulan", "#centers"],
+        ["PMB", "/id/penerimaan-mahasiswa-baru"]
+      ],
+      eyebrow: "Academic Research & Creative Development",
+      title: "Universitas teknologi kreatif untuk software, AI, desain, dan industri digital.",
+      lead: "Universitas ARCDEV Indonesia menghubungkan riset akademik, rekayasa perangkat lunak, kecerdasan buatan, desain visual, pengembangan produk, dan ekosistem teknologi global melalui pembelajaran berbasis proyek.",
+      primary: "Lihat Fakultas",
+      secondary: "Lihat Filosofi",
+      identityTitle: "Universitas ARCDEV Indonesia",
+      identityLead: "UARCDEV dibangun dari makna Academic Research & Creative Development, dengan Architecture Development sebagai makna teknologis untuk pengembangan sistem, perangkat lunak, dan teknologi digital.",
+      rectorTitle: "Rektor Universitas ARCDEV Indonesia",
+      rectorName: "Gland Siahaan",
+      rectorText: "Profil rektor multidisipliner yang menggabungkan artificial intelligence, software engineering, data engineering, desain komunikasi visual, strategi produk, dan kepemimpinan teknologi digital.",
+      philosophyTitle: "Filosofi ARCDEV",
+      philosophyLead: "ARCDEV menggabungkan ARC sebagai arsitektur yang terstruktur dan DEV sebagai pengembangan. Nama ini mencerminkan institusi yang membangun arah akademik, riset kreatif, dan produk digital nyata.",
+      partnerTitle: "Ekosistem teknologi global",
+      partnerLead: "ARCDEV secara konseptual terhubung dengan ekosistem digital luas pada bidang software, AI, cloud, semikonduktor, data, platform business, dan creative technology.",
+      ctaTitle: "Bangun portofolio sebelum lulus.",
+      ctaLead: "Mahasiswa ARCDEV diarahkan lulus dengan pengetahuan akademik, keterampilan teknis, dan pengalaman proyek nyata."
+    };
+
+const faculties = [
+  ["FASILKOM", "Fakultas Ilmu Komputer", "Information systems, computer science, software engineering, and intelligent platforms."],
+  ["FRTI", "Fakultas Rekayasa Teknologi Informasi", "Cloud, cybersecurity, network, IoT, and platform infrastructure."],
+  ["FAIR", "Fakultas Artificial Intelligence dan Robotika", "AI engineering, machine learning, robotics, and automation systems."],
+  ["FDKV", "Fakultas Desain Komunikasi Visual", "Visual identity, motion design, digital imaging, and brand communication."],
+  ["FMDI", "Fakultas Multimedia dan Industri Game", "Game development, animation, creative media, and interactive content."],
+  ["FDIUX", "Fakultas Desain Interaksi dan UI/UX", "Product design, interface systems, user research, and interaction strategy."],
+  ["FBKD", "Fakultas Bisnis Kreatif Digital", "Digital business, startup, e-commerce, and platform strategy."],
+  ["FTBW", "Fakultas Teknologi Blockchain dan Web3", "Blockchain, smart contract, Web3 product, and digital trust."],
+  ["FKKS", "Fakultas Komputasi Kuantum dan Sains", "Quantum computing, computational science, and advanced algorithms."],
+  ["FSTA", "Fakultas Satelit dan Teknologi Antariksa", "Space technology, satellite systems, and remote sensing."],
+  ["FSRCH", "Fakultas Semikonduktor dan Rekayasa Chip", "Chip design, semiconductor systems, and embedded computing."],
+  ["FDTII", "Fakultas Digital Twin dan Industri Intelijen", "Digital twin, simulation, intelligent industry, and enterprise systems."]
+];
+
+const centers = [
+  ["AI Lab", "Applied AI, generative AI, and intelligent system prototypes."],
+  ["Software Studio", "Web engineering, mobile product, API, and platform development."],
+  ["Design System Lab", "Brand identity, UI kits, interaction design, and visual systems."],
+  ["Data Center Lab", "Data pipeline, cloud architecture, analytics, and digital infrastructure."]
+];
+
+const partners = [
+  ["Microsoft", "microsoft.svg"],
+  ["NVIDIA", "nvidia.svg"],
+  ["Adobe", "adobe.svg"],
+  ["Meta", "meta.svg"],
+  ["OpenAI", "openai.svg"],
+  ["Google Cloud", "google-cloud.svg"],
+  ["AWS", "aws.svg"],
+  ["IBM", "ibm.svg"],
+  ["Oracle", "oracle.svg"],
+  ["Cisco", "cisco.svg"],
+  ["Intel", "intel.svg"],
+  ["AMD", "amd.svg"],
+  ["Arm", "arm.svg"],
+  ["Qualcomm", "qualcomm.svg"],
+  ["Bloomberg", "bloomberg.svg"],
+  ["Alibaba Cloud", "alibaba-cloud.svg"],
+  ["Tencent Cloud", "tencent-cloud.svg"],
+  ["Huawei Cloud", "huawei-cloud.svg"],
+  ["DCI Indonesia", "dci-indonesia.svg"],
+  ["Telkom Indonesia", "telkom-indonesia.svg"],
+  ["Gojek", "gojek.svg"],
+  ["Tokopedia", "tokopedia.svg"],
+  ["Traveloka", "traveloka.svg"],
+  ["Grab", "grab.svg"],
+  ["Shopee", "shopee.svg"]
+];
+---
+
+<div class="q-page">
+  <header class="q-header">
+    <a class="q-brand" href={copy.home} aria-label={copy.brand}>
+      <img src="/images/brand/arcdev-logo.png" alt="ARCDEV logo" />
+      <span>
+        <strong>{copy.brand}</strong>
+        <small>{copy.subtitle}</small>
+      </span>
+    </a>
+
+    <nav class="q-nav" aria-label="Main navigation">
+      {copy.nav.map(([label, href]) => <a href={href}>{label}</a>)}
+    </nav>
+
+    <div class="q-actions">
+      <a class="q-lang" href={copy.switchHref}>{copy.switchLabel}</a>
+      <a class="q-apply" href={copy.applyHref}>{copy.applyLabel}</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="q-hero">
+      <div class="q-hero-copy" data-reveal>
+        <p class="q-kicker">{copy.eyebrow}</p>
+        <h1>{copy.title}</h1>
+        <p class="q-lead">{copy.lead}</p>
+        <div class="q-hero-actions">
+          <a href={isEn ? "/en/faculties" : "/id/fakultas"}>{copy.primary}</a>
+          <a href="#philosophy">{copy.secondary}</a>
+        </div>
+      </div>
+
+      <aside class="q-hero-panel" data-reveal data-interactive-card>
+        <span>UARCDEV</span>
+        <strong>Academic Research & Creative Development</strong>
+        <p>Architecture Development for software, systems, digital products, and future technology.</p>
+      </aside>
+    </section>
+
+    <section class="q-identity" id="philosophy">
+      <div class="q-section-head" data-reveal>
+        <p class="q-kicker">UARCDEV Identity</p>
+        <h2>{copy.identityTitle}</h2>
+        <p>{copy.identityLead}</p>
+      </div>
+
+      <div class="q-identity-grid">
+        <article data-reveal data-interactive-card><span>Nama resmi</span><strong>Universitas ARCDEV Indonesia</strong></article>
+        <article data-reveal data-interactive-card><span>Singkatan</span><strong>UARCDEV</strong></article>
+        <article data-reveal data-interactive-card><span>International name</span><strong>ARCDEV University</strong></article>
+        <article data-reveal data-interactive-card><span>Philosophy</span><strong>Academic Research & Creative Development</strong></article>
+      </div>
+    </section>
+
+    <section class="q-faculties" id="faculties">
+      <div class="q-section-head" data-reveal>
+        <p class="q-kicker">Academic Ecosystem</p>
+        <h2>{isEn ? "Faculties built for future digital industries." : "Fakultas untuk industri digital masa depan."}</h2>
+        <p>{isEn ? "Each faculty has a clear academic direction, technical focus, and industry-oriented learning path." : "Setiap fakultas memiliki arah akademik, fokus teknis, dan jalur pembelajaran berbasis kebutuhan industri."}</p>
+      </div>
+
+      <div class="q-faculty-grid">
+        {faculties.map(([code, name, desc]) => (
+          <article class="q-faculty-card" data-reveal data-interactive-card>
+            <span>{code}</span>
+            <h3>{name}</h3>
+            <p>{desc}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="q-rector" id="rector">
+      <div class="q-rector-photo" data-reveal data-interactive-card>
+        <img src="/images/people/rector-gland-siahaan.png" alt="Rector of ARCDEV University" />
+        <span>Rektorat UARCDEV Gland Siahaan</span>
+      </div>
+
+      <div class="q-rector-copy" data-reveal>
+        <p class="q-kicker">Rector Profile</p>
+        <h2>{copy.rectorTitle}</h2>
+        <h3>{copy.rectorName}</h3>
+        <p>{copy.rectorText}</p>
+
+        <div class="q-profile-list">
+          <article><span>Education</span><strong>UASN, NUS, Harvard, Stanford, MIT, Oxford</strong></article>
+          <article><span>Expertise</span><strong>AI Engineering, Software Engineering, Data Engineering, UI/UX, DKV</strong></article>
+          <article><span>Industry</span><strong>Microsoft, Adobe, Meta, NVIDIA, Bloomberg, Alibaba Cloud, DCI Indonesia</strong></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="q-centers" id="centers">
+      <div class="q-section-head" data-reveal>
+        <p class="q-kicker">Centers of Excellence</p>
+        <h2>{isEn ? "Project-based learning spaces." : "Ruang belajar berbasis proyek."}</h2>
+        <p>{isEn ? "ARCDEV connects classroom learning with product studios, labs, and technology prototypes." : "ARCDEV menghubungkan pembelajaran kelas dengan studio produk, laboratorium, dan prototipe teknologi."}</p>
+      </div>
+
+      <div class="q-center-grid">
+        {centers.map(([name, desc]) => (
+          <article class="q-center-card" data-reveal data-interactive-card>
+            <h3>{name}</h3>
+            <p>{desc}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="q-philosophy">
+      <article data-reveal data-interactive-card>
+        <p class="q-kicker">Name Philosophy</p>
+        <h2>{copy.philosophyTitle}</h2>
+        <p>{copy.philosophyLead}</p>
+      </article>
+
+      <article data-reveal data-interactive-card>
+        <p class="q-kicker">Logo Philosophy</p>
+        <h2>{isEn ? "The A-shaped arc represents academic achievement." : "Bentuk A dan arc merepresentasikan pencapaian akademik."}</h2>
+        <p>{isEn ? "The futuristic purple 3D visual expresses creativity, intelligence, innovation, and a premium digital identity." : "Visual 3D berwarna ungu futuristik menunjukkan kreativitas, kecerdasan, inovasi, dan identitas kampus digital yang premium."}</p>
+      </article>
+    </section>
+
+    <section class="q-partners">
+      <div class="q-section-head" data-reveal>
+        <p class="q-kicker">Global Network</p>
+        <h2>{copy.partnerTitle}</h2>
+        <p>{copy.partnerLead}</p>
+      </div>
+
+      <div class="q-partner-grid">
+        {partners.map(([name, file]) => (
+          <article class="q-partner-card" data-reveal data-interactive-card>
+            <img src={`/images/partners/${file}`} alt={`${name} logo`} loading="lazy" />
+            <span>{name}</span>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="q-cta">
+      <div data-reveal>
+        <p class="q-kicker">Admissions</p>
+        <h2>{copy.ctaTitle}</h2>
+        <p>{copy.ctaLead}</p>
+        <a href={copy.applyHref}>{copy.applyLabel}</a>
+      </div>
+    </section>
+  </main>
+</div>

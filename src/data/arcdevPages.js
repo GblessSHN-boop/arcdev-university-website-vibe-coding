@@ -3,148 +3,85 @@
     tentang: {
       eyebrow: "Tentang UARCDEV",
       title: "Universitas ARCDEV Indonesia",
-      lead: "Universitas ARCDEV Indonesia adalah kampus teknologi kreatif yang menghubungkan riset akademik, rekayasa perangkat lunak, desain digital, kecerdasan buatan, dan kebutuhan industri masa depan.",
+      lead: "Universitas ARCDEV Indonesia adalah kampus teknologi kreatif yang menghubungkan riset akademik, software engineering, artificial intelligence, desain digital, dan kebutuhan industri masa depan.",
       cta: "Lihat Fakultas",
       ctaHref: "/id/fakultas",
       sections: [
-        {
-          title: "Identitas Institusi",
-          body: "Nama resmi institusi ini adalah Universitas ARCDEV Indonesia, dengan singkatan UARCDEV dan nama internasional ARCDEV University. Secara filosofis, ARCDEV dimaknai sebagai Academic Research & Creative Development, sedangkan makna teknologisnya adalah Architecture Development, yaitu pengembangan arsitektur sistem, perangkat lunak, dan teknologi digital."
-        },
-        {
-          title: "Arah Pengembangan",
-          body: "UARCDEV diarahkan sebagai ruang akademik yang tidak berhenti pada teori, tetapi bergerak menuju proyek, prototipe, produk digital, dan solusi industri. Karena itu, struktur akademiknya menghubungkan coding, desain, AI, bisnis digital, data, game, cloud, dan teknologi kreatif."
-        },
-        {
-          title: "Filosofi Logo",
-          body: "Logo berbentuk huruf A dengan gaya arc modern melambangkan Academic, Architecture, dan Achievement. Lengkungan pada logo merepresentasikan perjalanan mahasiswa dari ide, pembelajaran, eksperimen, implementasi, hingga kesiapan profesional."
-        }
+        ["Identitas Institusi", "Nama resmi institusi ini adalah Universitas ARCDEV Indonesia, dengan singkatan UARCDEV dan nama internasional ARCDEV University."],
+        ["Filosofi Nama", "ARCDEV berarti Academic Research & Creative Development. Makna teknologisnya adalah Architecture Development, yaitu pengembangan arsitektur sistem, perangkat lunak, dan teknologi digital."],
+        ["Filosofi Logo", "Logo berbentuk A dengan gaya arc modern melambangkan Academic, Architecture, dan Achievement. Warna ungu futuristik menunjukkan kreativitas, kecerdasan, dan visi teknologi masa depan."]
       ]
     },
     fakultas: {
       eyebrow: "Academic Ecosystem",
       title: "Fakultas UARCDEV",
-      lead: "Struktur fakultas UARCDEV disusun agar setiap bidang teknologi dan kreativitas memiliki fokus akademik yang jelas, tidak tercampur, dan mudah dipahami calon mahasiswa.",
+      lead: "Fakultas UARCDEV dirancang untuk membangun jalur akademik yang jelas pada coding, AI, desain, bisnis digital, data, game, cloud, dan teknologi masa depan.",
       cta: "Lihat Program Studi",
       ctaHref: "/id/program-studi",
       sections: [
-        {
-          title: "Teknologi Informasi dan Rekayasa",
-          body: "FASILKOM dan FRTI menjadi basis pengembangan sistem informasi, ilmu komputer, rekayasa perangkat lunak, cloud computing, keamanan siber, jaringan, IoT, dan platform engineering."
-        },
-        {
-          title: "AI, Desain, dan Media Digital",
-          body: "FAIR, FDKV, FMDI, dan FDIUX mengembangkan kompetensi artificial intelligence, robotika, desain komunikasi visual, animasi, game, multimedia, UI/UX, product design, dan human computer interaction."
-        },
-        {
-          title: "Bisnis Digital dan Teknologi Masa Depan",
-          body: "FBKD, FTBW, FKKS, FSTA, FSRCH, dan FDTII memperluas ekosistem ke bisnis kreatif digital, Web3, komputasi kuantum, teknologi satelit, semikonduktor, chip engineering, digital twin, dan industri cerdas."
-        }
+        ["Teknologi Informasi", "FASILKOM dan FRTI menjadi basis pengembangan sistem informasi, ilmu komputer, software engineering, cloud, cybersecurity, network, dan IoT."],
+        ["AI dan Desain Digital", "FAIR, FDKV, FMDI, dan FDIUX mengembangkan AI engineering, robotika, desain komunikasi visual, multimedia, game, UI/UX, dan product design."],
+        ["Teknologi Masa Depan", "FBKD, FTBW, FKKS, FSTA, FSRCH, dan FDTII memperluas ekosistem ke bisnis digital, Web3, quantum computing, satelit, semikonduktor, dan digital twin."]
       ]
     },
     "program-studi": {
       eyebrow: "Study Programs",
       title: "Program Studi Berbasis Industri Masa Depan",
-      lead: "Program studi UARCDEV dirancang untuk membangun kompetensi akademik, teknis, dan proyek nyata agar mahasiswa memiliki portofolio yang relevan dengan industri digital.",
-      cta: "Pendaftaran Mahasiswa Baru",
+      lead: "Program studi UARCDEV membangun kompetensi akademik, teknis, dan proyek nyata agar mahasiswa memiliki portofolio yang relevan dengan industri digital.",
+      cta: "Daftar Sekarang",
       ctaHref: "/id/penerimaan-mahasiswa-baru",
       sections: [
-        {
-          title: "Jalur Coding dan Engineering",
-          body: "Mahasiswa dapat memilih jalur sistem informasi, ilmu komputer, teknik informatika, software engineering, cybersecurity, cloud computing, data science, dan AI engineering."
-        },
-        {
-          title: "Jalur Desain dan Produk Digital",
-          body: "Bidang desain komunikasi visual, UI/UX, interaction design, animasi, game, multimedia, dan digital product design diarahkan untuk membangun kemampuan kreatif berbasis teknologi."
-        },
-        {
-          title: "Jalur Bisnis dan Inovasi",
-          body: "Program bisnis digital, startup, e-commerce, platform business, creative business, blockchain, Web3, dan digital trust mempersiapkan mahasiswa menjadi technopreneur dan inovator digital."
-        }
+        ["Coding dan Engineering", "Jalur ini mencakup sistem informasi, ilmu komputer, teknik informatika, software engineering, cybersecurity, cloud computing, data science, dan AI engineering."],
+        ["Desain dan Produk Digital", "Jalur ini mencakup DKV, UI/UX, interaction design, animasi, game, multimedia, dan digital product design."],
+        ["Bisnis dan Inovasi", "Jalur ini mencakup bisnis digital, startup, e-commerce, platform business, blockchain, Web3, dan digital trust."]
       ]
     },
     "penerimaan-mahasiswa-baru": {
-      eyebrow: "Admission Pathway",
-      title: "Penerimaan Mahasiswa Baru UARCDEV",
-      lead: "Proses PMB dirancang agar calon mahasiswa dapat memahami fakultas, program studi, jalur minat, biaya, dan peluang karier secara jelas sebelum mendaftar.",
+      eyebrow: "Admissions",
+      title: "Penerimaan Mahasiswa Baru",
+      lead: "PMB UARCDEV membantu calon mahasiswa memahami fakultas, program studi, jalur minat, pembiayaan, dan arah karier sebelum mendaftar.",
       cta: "Hubungi Admisi",
       ctaHref: "/id/kontak",
       sections: [
-        {
-          title: "Pilih Fakultas",
-          body: "Calon mahasiswa menentukan bidang akademik berdasarkan minat utama, seperti coding, AI, desain, bisnis digital, data, keamanan siber, game, atau teknologi masa depan."
-        },
-        {
-          title: "Konsultasi Program",
-          body: "Tahap konsultasi membantu calon mahasiswa memahami kesesuaian program studi dengan tujuan karier, kemampuan awal, dan rencana pengembangan portofolio."
-        },
-        {
-          title: "Finalisasi Pendaftaran",
-          body: "Calon mahasiswa melengkapi dokumen, memilih jalur pembiayaan, mengikuti proses seleksi, lalu memperoleh informasi final mengenai status penerimaan."
-        }
+        ["Pilih Fakultas", "Calon mahasiswa memilih bidang berdasarkan minat utama seperti coding, AI, desain, bisnis digital, data, cybersecurity, game, atau teknologi masa depan."],
+        ["Konsultasi Program", "Tahap konsultasi membantu calon mahasiswa menyesuaikan pilihan program studi dengan tujuan karier dan rencana portofolio."],
+        ["Finalisasi Pendaftaran", "Calon mahasiswa melengkapi dokumen, memilih jalur pembiayaan, mengikuti seleksi, dan menerima informasi status penerimaan."]
       ]
     },
     beasiswa: {
       eyebrow: "Scholarship",
       title: "Beasiswa dan Dukungan Studi",
-      lead: "UARCDEV menempatkan beasiswa sebagai instrumen untuk membuka akses pendidikan teknologi bagi talenta yang memiliki potensi akademik, kreativitas, dan komitmen pengembangan diri.",
+      lead: "UARCDEV membuka ruang beasiswa bagi talenta akademik, kreatif, dan digital yang memiliki komitmen pengembangan diri.",
       cta: "Lihat PMB",
       ctaHref: "/id/penerimaan-mahasiswa-baru",
       sections: [
-        {
-          title: "Beasiswa Prestasi",
-          body: "Diberikan kepada calon mahasiswa yang memiliki capaian akademik, kompetisi teknologi, desain, karya digital, riset, atau portofolio kreatif yang kuat."
-        },
-        {
-          title: "Beasiswa Talenta Digital",
-          body: "Ditujukan bagi calon mahasiswa dengan minat kuat pada coding, AI, UI/UX, game development, desain digital, data science, atau startup teknologi."
-        },
-        {
-          title: "Dukungan Pembiayaan",
-          body: "Skema pembiayaan disusun agar mahasiswa dapat merencanakan studi secara lebih rasional, terukur, dan sesuai dengan kondisi keluarga."
-        }
+        ["Beasiswa Prestasi", "Diberikan kepada calon mahasiswa dengan capaian akademik, kompetisi teknologi, karya desain, riset, atau portofolio digital."],
+        ["Beasiswa Talenta Digital", "Ditujukan bagi calon mahasiswa dengan minat kuat pada coding, AI, UI/UX, game development, desain digital, data science, atau startup."],
+        ["Dukungan Pembiayaan", "Skema pembiayaan membantu keluarga merencanakan studi secara lebih rasional, jelas, dan terukur."]
       ]
     },
     berita: {
       eyebrow: "Newsroom",
       title: "Berita dan Informasi Kampus",
       lead: "Newsroom UARCDEV menyajikan informasi akademik, aktivitas fakultas, pusat unggulan, PMB, kolaborasi industri, dan pengembangan kampus digital.",
-      cta: "Lihat Tentang UARCDEV",
+      cta: "Tentang UARCDEV",
       ctaHref: "/id/tentang",
       sections: [
-        {
-          title: "Akademik",
-          body: "Informasi mengenai fakultas, program studi, kurikulum, pusat unggulan, dan kegiatan akademik disajikan secara editorial agar mudah dipahami."
-        },
-        {
-          title: "Inovasi Digital",
-          body: "Berita mengenai AI, cloud, desain digital, blockchain, cybersecurity, game, dan teknologi masa depan ditempatkan sebagai bagian dari identitas kampus."
-        },
-        {
-          title: "Kehidupan Kampus",
-          body: "Informasi mengenai aktivitas mahasiswa, komunitas kreatif, event, kompetisi, dan proyek kolaboratif menjadi bagian penting dari komunikasi publik UARCDEV."
-        }
+        ["Akademik", "Informasi fakultas, program studi, kurikulum, pusat unggulan, dan kegiatan akademik disajikan secara editorial."],
+        ["Inovasi Digital", "Berita mengenai AI, cloud, desain digital, blockchain, cybersecurity, game, dan teknologi masa depan menjadi bagian dari identitas kampus."],
+        ["Kehidupan Kampus", "Aktivitas mahasiswa, komunitas kreatif, event, kompetisi, dan proyek kolaboratif menjadi bagian penting komunikasi publik UARCDEV."]
       ]
     },
     "kehidupan-kampus": {
       eyebrow: "Campus Life",
       title: "Kehidupan Kampus Digital Kreatif",
-      lead: "Kehidupan kampus UARCDEV dirancang untuk menghubungkan pembelajaran akademik, komunitas teknologi, studio kreatif, kompetisi digital, dan proyek nyata.",
+      lead: "Kehidupan kampus UARCDEV menghubungkan pembelajaran akademik, komunitas teknologi, studio kreatif, kompetisi digital, dan proyek nyata.",
       cta: "Lihat Portal",
       ctaHref: "/id/portal",
       sections: [
-        {
-          title: "Komunitas Akademik",
-          body: "Mahasiswa didorong membangun komunitas coding, desain, AI, game, riset, startup, dan teknologi kreatif sebagai ruang bertukar ide dan memperluas portofolio."
-        },
-        {
-          title: "Project-Based Learning",
-          body: "Aktivitas kampus diarahkan pada pembuatan produk, prototype, simulasi, desain, sistem digital, dan proyek berbasis kebutuhan nyata."
-        },
-        {
-          title: "Budaya Kompetitif",
-          body: "UARCDEV membangun budaya kampus yang adaptif, cepat, dan kompetitif melalui hackathon, design challenge, esport coding, dan kompetisi inovasi."
-        }
+        ["Komunitas Akademik", "Mahasiswa membangun komunitas coding, desain, AI, game, riset, startup, dan teknologi kreatif."],
+        ["Project-Based Learning", "Aktivitas kampus diarahkan pada produk, prototype, simulasi, desain, sistem digital, dan proyek berbasis kebutuhan nyata."],
+        ["Budaya Kompetitif", "UARCDEV membangun budaya adaptif melalui hackathon, design challenge, esport coding, dan kompetisi inovasi."]
       ]
     },
     portal: {
@@ -154,147 +91,83 @@
       cta: "Hubungi Kampus",
       ctaHref: "/id/kontak",
       sections: [
-        {
-          title: "Akses Akademik",
-          body: "Portal mendukung akses ke informasi program studi, kalender akademik, dokumen akademik, jadwal, dan layanan pembelajaran digital."
-        },
-        {
-          title: "Akses PMB",
-          body: "Calon mahasiswa dapat memperoleh informasi pendaftaran, fakultas, jalur seleksi, pembiayaan, dan kontak admisi secara lebih terstruktur."
-        },
-        {
-          title: "Akses Komunitas",
-          body: "Portal juga diarahkan untuk mendukung publikasi karya, komunitas mahasiswa, pusat unggulan, dan aktivitas kolaboratif kampus."
-        }
+        ["Akses Akademik", "Portal mendukung informasi program studi, kalender akademik, dokumen akademik, jadwal, dan layanan pembelajaran digital."],
+        ["Akses PMB", "Calon mahasiswa memperoleh informasi pendaftaran, fakultas, jalur seleksi, pembiayaan, dan kontak admisi."],
+        ["Akses Komunitas", "Portal mendukung publikasi karya, komunitas mahasiswa, pusat unggulan, dan aktivitas kolaboratif kampus."]
       ]
     },
     kontak: {
       eyebrow: "Contact",
       title: "Kontak Universitas ARCDEV Indonesia",
-      lead: "Hubungi UARCDEV untuk informasi penerimaan mahasiswa baru, fakultas, program studi, beasiswa, kerja sama, dan layanan kampus digital.",
+      lead: "Hubungi UARCDEV untuk informasi PMB, fakultas, program studi, beasiswa, kerja sama, dan layanan kampus digital.",
       cta: "Kembali ke Beranda",
       ctaHref: "/id",
       sections: [
-        {
-          title: "Lokasi Kampus",
-          body: "Medan, Sumatera Utara, Indonesia. UARCDEV dikembangkan sebagai kampus digital kreatif dengan orientasi nasional dan internasional."
-        },
-        {
-          title: "Informasi Admisi",
-          body: "Tim admisi membantu calon mahasiswa memahami pilihan fakultas, program studi, jalur minat, proses seleksi, dan estimasi kebutuhan studi."
-        },
-        {
-          title: "Kolaborasi",
-          body: "UARCDEV membuka ruang kolaborasi untuk riset, pengembangan produk digital, pelatihan, studio kreatif, dan program penguatan talenta teknologi."
-        }
+        ["Lokasi Kampus", "Medan, Sumatera Utara, Indonesia. UARCDEV dikembangkan sebagai kampus digital kreatif dengan orientasi nasional dan internasional."],
+        ["Informasi Admisi", "Tim admisi membantu calon mahasiswa memahami pilihan fakultas, program studi, jalur minat, proses seleksi, dan rencana studi."],
+        ["Kolaborasi", "UARCDEV membuka kolaborasi untuk riset, pengembangan produk digital, pelatihan, studio kreatif, dan penguatan talenta teknologi."]
       ]
     }
   },
-
   en: {
     about: {
       eyebrow: "About UARCDEV",
       title: "ARCDEV University",
-      lead: "ARCDEV University is a creative technology campus connecting academic research, software engineering, digital design, artificial intelligence, and future industry needs.",
+      lead: "ARCDEV University is a creative technology campus connecting academic research, software engineering, artificial intelligence, digital design, and future industry needs.",
       cta: "Explore Faculties",
       ctaHref: "/en/faculties",
       sections: [
-        {
-          title: "Institutional Identity",
-          body: "The official Indonesian name is Universitas ARCDEV Indonesia, with UARCDEV as the abbreviation and ARCDEV University as the international name. Philosophically, ARCDEV means Academic Research & Creative Development, while its technical meaning refers to Architecture Development."
-        },
-        {
-          title: "Development Direction",
-          body: "ARCDEV is designed as an academic ecosystem that moves beyond theory into projects, prototypes, digital products, applied research, and industry collaboration."
-        },
-        {
-          title: "Logo Philosophy",
-          body: "The A-shaped arc logo represents Academic, Architecture, and Achievement. Its arc form symbolizes the student journey from ideas and learning to experimentation, implementation, and professional readiness."
-        }
+        ["Institutional Identity", "The official Indonesian name is Universitas ARCDEV Indonesia, with UARCDEV as the abbreviation and ARCDEV University as the international name."],
+        ["Name Philosophy", "ARCDEV means Academic Research & Creative Development. Its technical meaning is Architecture Development for system, software, and digital technology development."],
+        ["Logo Philosophy", "The A-shaped arc logo represents Academic, Architecture, and Achievement. Its purple futuristic style represents creativity, intelligence, and future digital vision."]
       ]
     },
     faculties: {
       eyebrow: "Academic Ecosystem",
       title: "ARCDEV Faculties",
-      lead: "ARCDEV faculties are structured to ensure that each technology and creative field has a clear academic focus and a readable pathway.",
+      lead: "ARCDEV faculties build clear academic pathways across coding, AI, design, digital business, data, game, cloud, and future technology.",
       cta: "Explore Study Programs",
       ctaHref: "/en/study-programs",
       sections: [
-        {
-          title: "Information Technology and Engineering",
-          body: "The academic structure covers information systems, computer science, software engineering, cybersecurity, cloud computing, networks, IoT, and platform engineering."
-        },
-        {
-          title: "AI, Design, and Digital Media",
-          body: "ARCDEV develops artificial intelligence, robotics, visual communication design, animation, game technology, multimedia, UI/UX, product design, and interaction design."
-        },
-        {
-          title: "Digital Business and Future Technology",
-          body: "The ecosystem expands into digital creative business, Web3, quantum computing, space technology, semiconductor engineering, digital twin, and intelligent industry technology."
-        }
+        ["Information Technology", "The ecosystem covers information systems, computer science, software engineering, cloud, cybersecurity, network, and IoT."],
+        ["AI and Digital Design", "ARCDEV develops AI engineering, robotics, visual communication design, multimedia, game, UI/UX, and product design."],
+        ["Future Technology", "The ecosystem expands into digital business, Web3, quantum computing, space technology, semiconductor engineering, and digital twin."]
       ]
     },
     "study-programs": {
       eyebrow: "Study Programs",
       title: "Programs for Future Digital Industry",
-      lead: "ARCDEV study programs are designed to build academic, technical, and project-based competencies for future digital industries.",
+      lead: "ARCDEV study programs build academic, technical, and project-based competencies for future digital industries.",
       cta: "Apply Now",
       ctaHref: "/en/admissions",
       sections: [
-        {
-          title: "Coding and Engineering Track",
-          body: "Students can explore information systems, computer science, informatics engineering, software engineering, cybersecurity, cloud computing, data science, and AI engineering."
-        },
-        {
-          title: "Design and Digital Product Track",
-          body: "Visual communication design, UI/UX, interaction design, animation, game technology, multimedia, and digital product design support creative technology development."
-        },
-        {
-          title: "Business and Innovation Track",
-          body: "Digital business, startup, e-commerce, platform business, blockchain, Web3, and digital trust prepare students for technopreneurship and digital innovation."
-        }
+        ["Coding and Engineering", "This track covers information systems, computer science, informatics engineering, software engineering, cybersecurity, cloud computing, data science, and AI engineering."],
+        ["Design and Digital Product", "This track covers visual communication design, UI/UX, interaction design, animation, game, multimedia, and digital product design."],
+        ["Business and Innovation", "This track covers digital business, startup, e-commerce, platform business, blockchain, Web3, and digital trust."]
       ]
     },
     admissions: {
       eyebrow: "Admissions",
       title: "ARCDEV Admission Pathway",
-      lead: "The admission process helps prospective students understand faculties, programs, interests, funding options, and career directions before applying.",
+      lead: "The admission process helps prospective students understand faculties, programs, interest tracks, funding, and career directions before applying.",
       cta: "Contact Admissions",
       ctaHref: "/en/contact",
       sections: [
-        {
-          title: "Choose a Faculty",
-          body: "Prospective students choose their academic direction based on interest in coding, AI, design, digital business, data, cybersecurity, game, or future technology."
-        },
-        {
-          title: "Program Consultation",
-          body: "Consultation helps students match their study program with career goals, initial skills, and portfolio development plans."
-        },
-        {
-          title: "Finalize Admission",
-          body: "Applicants complete documents, select funding pathways, follow the selection process, and receive final admission information."
-        }
+        ["Choose a Faculty", "Students choose their academic direction based on interest in coding, AI, design, digital business, data, cybersecurity, game, or future technology."],
+        ["Program Consultation", "Consultation helps students match study programs with career goals and portfolio development plans."],
+        ["Finalize Admission", "Applicants complete documents, select funding pathways, follow the selection process, and receive final admission information."]
       ]
     },
     scholarships: {
-      eyebrow: "Scholarships",
+      eyebrow: "Scholarship",
       title: "Scholarships and Study Support",
-      lead: "ARCDEV positions scholarships as a way to open access for students with academic potential, creativity, and digital talent.",
+      lead: "ARCDEV opens scholarship opportunities for academic, creative, and digital talents with strong development commitment.",
       cta: "View Admissions",
       ctaHref: "/en/admissions",
       sections: [
-        {
-          title: "Achievement Scholarship",
-          body: "This pathway supports candidates with academic achievements, technology competitions, digital design works, research, or strong creative portfolios."
-        },
-        {
-          title: "Digital Talent Scholarship",
-          body: "This pathway is designed for candidates interested in coding, AI, UI/UX, game development, digital design, data science, or technology startups."
-        },
-        {
-          title: "Funding Support",
-          body: "Funding information is structured to help families plan study decisions in a clear and measurable way."
-        }
+        ["Achievement Scholarship", "This pathway supports candidates with academic achievements, technology competitions, design works, research, or digital portfolios."],
+        ["Digital Talent Scholarship", "This pathway supports candidates interested in coding, AI, UI/UX, game development, digital design, data science, or startup."],
+        ["Funding Support", "Funding information helps families plan study decisions in a clear and measurable way."]
       ]
     },
     news: {
@@ -304,18 +177,9 @@
       cta: "About ARCDEV",
       ctaHref: "/en/about",
       sections: [
-        {
-          title: "Academic Updates",
-          body: "Information about faculties, programs, curriculum, centers of excellence, and academic activities is presented in a clear editorial format."
-        },
-        {
-          title: "Digital Innovation",
-          body: "Updates on AI, cloud, digital design, blockchain, cybersecurity, game, and future technology are part of the campus identity."
-        },
-        {
-          title: "Campus Life",
-          body: "Student activities, creative communities, events, competitions, and collaborative projects are central to ARCDEV public communication."
-        }
+        ["Academic Updates", "Information about faculties, programs, curriculum, centers of excellence, and academic activities is presented clearly."],
+        ["Digital Innovation", "Updates on AI, cloud, digital design, blockchain, cybersecurity, game, and future technology are part of the campus identity."],
+        ["Campus Life", "Student activities, creative communities, events, competitions, and collaborative projects are central to ARCDEV public communication."]
       ]
     },
     "campus-life": {
@@ -325,18 +189,9 @@
       cta: "Open Portals",
       ctaHref: "/en/portals",
       sections: [
-        {
-          title: "Academic Communities",
-          body: "Students are encouraged to build communities in coding, design, AI, game, research, startup, and creative technology."
-        },
-        {
-          title: "Project-Based Learning",
-          body: "Campus activities focus on products, prototypes, simulations, designs, digital systems, and projects based on real needs."
-        },
-        {
-          title: "Competitive Culture",
-          body: "ARCDEV promotes an adaptive and competitive culture through hackathons, design challenges, esport coding, and innovation competitions."
-        }
+        ["Academic Communities", "Students build communities in coding, design, AI, game, research, startup, and creative technology."],
+        ["Project-Based Learning", "Campus activities focus on products, prototypes, simulations, designs, digital systems, and real projects."],
+        ["Competitive Culture", "ARCDEV promotes an adaptive culture through hackathons, design challenges, esport coding, and innovation competitions."]
       ]
     },
     portals: {
@@ -346,18 +201,9 @@
       cta: "Contact ARCDEV",
       ctaHref: "/en/contact",
       sections: [
-        {
-          title: "Academic Access",
-          body: "The portal supports access to study program information, academic calendars, academic documents, schedules, and digital learning services."
-        },
-        {
-          title: "Admission Access",
-          body: "Prospective students can access structured information about admissions, faculties, selection pathways, funding, and contact channels."
-        },
-        {
-          title: "Community Access",
-          body: "The portal also supports student works, communities, centers of excellence, and collaborative campus activities."
-        }
+        ["Academic Access", "The portal supports access to study program information, academic calendars, academic documents, schedules, and digital learning services."],
+        ["Admission Access", "Prospective students access structured information about admissions, faculties, selection pathways, funding, and contacts."],
+        ["Community Access", "The portal supports student works, communities, centers of excellence, and collaborative campus activities."]
       ]
     },
     contact: {
@@ -367,18 +213,9 @@
       cta: "Back to Home",
       ctaHref: "/en",
       sections: [
-        {
-          title: "Campus Location",
-          body: "Medan, North Sumatra, Indonesia. ARCDEV is developed as a creative digital campus with national and international orientation."
-        },
-        {
-          title: "Admission Information",
-          body: "The admission team helps prospective students understand faculty options, programs, interest tracks, selection processes, and study planning."
-        },
-        {
-          title: "Collaboration",
-          body: "ARCDEV opens collaboration opportunities in research, digital product development, training, creative studios, and technology talent development."
-        }
+        ["Campus Location", "Medan, North Sumatra, Indonesia. ARCDEV is developed as a creative digital campus with national and international orientation."],
+        ["Admission Information", "The admission team helps prospective students understand faculties, programs, interest tracks, selection processes, and study planning."],
+        ["Collaboration", "ARCDEV opens collaboration opportunities in research, digital product development, training, creative studios, and technology talent development."]
       ]
     }
   }

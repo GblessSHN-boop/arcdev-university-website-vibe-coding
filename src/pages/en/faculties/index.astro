@@ -1,11 +1,12 @@
 ﻿---
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import ArcStaticPage from "../../components/global/ArcStaticPage.astro";
-import { arcdevPages } from "../../data/arcdevPages.js";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ArcStaticPage from "../../../components/global/ArcStaticPage.astro";
+import { arcdevPages } from "../../../data/arcdevPages.js";
 
 const page = arcdevPages.en["faculties"];
+const pageTitle = page.title + " | ARCDEV University";
 ---
 
-<BaseLayout title={${page.title} | } description={page.lead} lang="en">
+<BaseLayout title={pageTitle} description={page.lead} lang="en">
   <ArcStaticPage page={page} lang="en" />
 </BaseLayout>
