@@ -4,19 +4,31 @@ const base = import.meta.env.BASE_URL;
 const rector = {
   name: "Gland Siahaan",
   title: "Rektor Universitas ARCDEV Indonesia",
-  image: `${base}images/people/rector-gland-siahaan.png`
+  imageMain: `${base}images/people/rector-gland-siahaan.png`,
+  imageReveal: `${base}images/people/rector-gland-siahaan-reveal.png`
 };
 ---
 
 <section id="rektor" class="rector-fit-section">
   <div class="container rector-fit-wrap">
     <div class="rector-fit-media">
-      <img
-        src={rector.image}
-        alt={rector.name}
-        class="rector-fit-photo"
-        loading="lazy"
-      />
+      <div class="rector-reveal-card" aria-label="Foto Rektor Universitas ARCDEV Indonesia">
+        <img
+          src={rector.imageReveal}
+          alt=""
+          class="rector-fit-photo rector-photo-reveal"
+          loading="lazy"
+          aria-hidden="true"
+        />
+
+        <img
+          src={rector.imageMain}
+          alt={rector.name}
+          class="rector-fit-photo rector-photo-main"
+          loading="lazy"
+        />
+        <span class="rector-hover-label">Rektorat UARCDEV</span>
+      </div>
     </div>
 
     <div class="rector-fit-copy">
@@ -75,6 +87,22 @@ const rector = {
     overflow: visible;
   }
 
+  .rector-reveal-card {
+    --x: 50%;
+    --y: 50%;
+    --lens-size: 132px;
+    --lens-radius: 66px;
+    position: relative;
+    width: 340px;
+    height: 370px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+    cursor: default;
+    isolation: isolate;
+  }
+
   .rector-fit-photo {
     display: block;
     width: auto;
@@ -83,7 +111,97 @@ const rector = {
     max-height: 360px;
     object-fit: contain;
     object-position: center bottom;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  .rector-photo-reveal {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    z-index: 1;
+    transform: translateX(-50%);
+    opacity: 0;
+    filter:
+      drop-shadow(0 16px 28px rgba(0, 0, 0, 0.18))
+      saturate(1.02)
+      contrast(1.02);
+    -webkit-mask-image: radial-gradient(
+      circle var(--lens-radius) at var(--x) var(--y),
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 1) 54%,
+      rgba(0, 0, 0, 0.62) 72%,
+      rgba(0, 0, 0, 0.18) 86%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    mask-image: radial-gradient(
+      circle var(--lens-radius) at var(--x) var(--y),
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 1) 54%,
+      rgba(0, 0, 0, 0.62) 72%,
+      rgba(0, 0, 0, 0.18) 86%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    transition: opacity 0.2s ease;
+  }
+
+  .rector-photo-main {
+    position: relative;
+    z-index: 2;
     filter: drop-shadow(0 16px 28px rgba(0, 0, 0, 0.22));
+    transition: filter 0.22s ease;
+  }
+
+  .rector-reveal-card.is-revealing .rector-photo-main {
+    -webkit-mask-image: radial-gradient(
+      circle calc(var(--lens-radius) + 8px) at var(--x) var(--y),
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0) 54%,
+      rgba(0, 0, 0, 0.28) 72%,
+      rgba(0, 0, 0, 0.78) 88%,
+      rgba(0, 0, 0, 1) 100%
+    );
+    mask-image: radial-gradient(
+      circle calc(var(--lens-radius) + 8px) at var(--x) var(--y),
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0) 54%,
+      rgba(0, 0, 0, 0.28) 72%,
+      rgba(0, 0, 0, 0.78) 88%,
+      rgba(0, 0, 0, 1) 100%
+    );
+    filter:
+      drop-shadow(0 16px 28px rgba(0, 0, 0, 0.22))
+      saturate(0.98);
+  }
+.rector-hover-label {
+    position: absolute;
+    left: 18px;
+    bottom: 18px;
+    z-index: 4;
+    padding: 8px 11px;
+    color: #ffffff;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    background: rgba(20, 6, 50, 0.66);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    backdrop-filter: blur(8px);
+    opacity: 0;
+    transform: translateY(8px);
+    transition:
+      opacity 0.22s ease,
+      transform 0.22s ease;
+  }
+
+  .rector-reveal-card.is-revealing .rector-photo-reveal {
+    opacity: 1;
+  }
+
+  .rector-reveal-card.is-revealing
+.rector-reveal-card.is-revealing .rector-hover-label {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .rector-fit-copy {
@@ -154,6 +272,11 @@ const rector = {
       gap: 36px;
     }
 
+    .rector-reveal-card {
+      width: 300px;
+      height: 350px;
+    }
+
     .rector-fit-photo {
       max-width: 290px;
       max-height: 340px;
@@ -183,6 +306,12 @@ const rector = {
       max-width: 100%;
     }
 
+    .rector-reveal-card {
+      width: 270px;
+      height: 320px;
+      margin: 0 auto;
+    }
+
     .rector-fit-photo {
       max-width: 260px;
       max-height: 300px;
@@ -194,3 +323,46 @@ const rector = {
     }
   }
 </style>
+
+<script is:inline>
+  (() => {
+    const cards = document.querySelectorAll(".rector-reveal-card");
+
+    cards.forEach((card) => {
+      let raf = null;
+      let nextX = 0;
+      let nextY = 0;
+
+      const applyLens = () => {
+        card.style.setProperty("--x", `${nextX}px`);
+        card.style.setProperty("--y", `${nextY}px`);
+        raf = null;
+      };
+
+      const moveLens = (event) => {
+        const photo = card.querySelector(".rector-photo-main");
+        const rect = photo ? photo.getBoundingClientRect() : card.getBoundingClientRect();
+
+        nextX = event.clientX - rect.left;
+        nextY = event.clientY - rect.top;
+
+        if (!raf) {
+          raf = requestAnimationFrame(applyLens);
+        }
+      };
+
+      card.addEventListener("pointerenter", (event) => {
+        card.classList.add("is-revealing");
+        moveLens(event);
+      });
+
+      card.addEventListener("pointermove", moveLens);
+
+      card.addEventListener("pointerleave", () => {
+        card.classList.remove("is-revealing");
+      });
+    });
+  })();
+</script>
+
+
