@@ -7,9 +7,13 @@ const rector = {
   imageMain: `${base}images/people/rector-gland-siahaan.png`,
   imageReveal: `${base}images/people/rector-gland-siahaan-reveal.png`
 };
+
+const batikPattern = `${base}images/patterns/arcdev-batik.svg`;
+
+const batikBanner = `${base}images/patterns/arcdev-batik-banner.png`;
 ---
 
-<section id="rektor" class="rector-fit-section">
+<section id="rektor" class="rector-fit-section" style={`--arcdev-batik-banner: url("${batikBanner}");`}>
   <div class="container rector-fit-wrap">
     <div class="rector-fit-media">
       <div class="rector-reveal-card" aria-label="Foto Rektor Universitas ARCDEV Indonesia">
@@ -58,18 +62,31 @@ const rector = {
       radial-gradient(circle at 88% 18%, rgba(147, 91, 255, 0.24), transparent 30%),
       linear-gradient(135deg, #140632 0%, #260b69 52%, #5520bf 100%);
   }
-
   .rector-fit-section::before {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(rgba(255, 255, 255, 0.13) 1px, transparent 1px);
-    background-size: 24px 24px;
-    opacity: 0.25;
+    background-image:
+      var(--arcdev-batik),
+      var(--arcdev-batik),
+      radial-gradient(circle at 82% 16%, rgba(255, 255, 255, 0.12), transparent 30%);
+    background-size:
+      155px 155px,
+      155px 155px,
+      100% 100%;
+    background-position:
+      0 0,
+      78px 78px,
+      center center;
+    background-repeat:
+      repeat,
+      repeat,
+      no-repeat;
+    opacity: 0.12;
+    mix-blend-mode: screen;
     pointer-events: none;
   }
-
-  .rector-fit-wrap {
+.rector-fit-wrap {
     position: relative;
     z-index: 1;
     min-height: 390px;
@@ -322,6 +339,54 @@ const rector = {
       margin-right: auto;
     }
   }
+
+/* =========================================================
+   ARCDEV BATIK USER BANNER V5
+========================================================= */
+
+.rector-fit-section {
+  position: relative !important;
+  isolation: isolate !important;
+  overflow: hidden !important;
+  background:
+    linear-gradient(135deg, #120527 0%, #251061 48%, #5520bf 100%) !important;
+}
+
+.rector-fit-section::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background-image: var(--arcdev-batik-banner) !important;
+  background-size: 100% 100% !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  opacity: 0.42 !important;
+  filter: contrast(1.18) brightness(1.18) saturate(0.95) !important;
+  mix-blend-mode: screen !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+}
+
+.rector-fit-section::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background:
+    radial-gradient(circle at 82% 18%, rgba(151, 92, 255, 0.22), transparent 34%),
+    linear-gradient(135deg, rgba(18, 5, 39, 0.72) 0%, rgba(37, 16, 97, 0.58) 50%, rgba(85, 32, 191, 0.48) 100%) !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+.rector-fit-section > * {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* =========================================================
+   END ARCDEV BATIK USER BANNER V5
+========================================================= */
+
 </style>
 
 <script is:inline>
@@ -364,5 +429,11 @@ const rector = {
     });
   })();
 </script>
+
+
+
+
+
+
 
 
