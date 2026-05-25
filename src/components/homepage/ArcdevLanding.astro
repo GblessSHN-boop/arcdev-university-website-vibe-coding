@@ -1,4 +1,5 @@
 ﻿---
+import RectorMessage from "./RectorMessage.astro";
 const { lang = "id" } = Astro.props;
 
 const baseUrl = import.meta.env.BASE_URL || "/";
@@ -268,25 +269,7 @@ const arcVideoHeroSrc = arcVideoHeroWithBase("/videos/presentarcdev.mp4");
       </div>
     </section>
 
-    <section class="q-rector" id="rector">
-      <div class="q-rector-photo" data-reveal data-interactive-card>
-        <img src={withBase("/images/people/rector-gland-siahaan.png")} alt="Rector of ARCDEV University" />
-        <span>Rektorat UARCDEV Gland Siahaan</span>
-      </div>
-
-      <div class="q-rector-copy" data-reveal>
-        <p class="q-kicker">Rector Profile</p>
-        <h2>{copy.rectorTitle}</h2>
-        <h3>{copy.rectorName}</h3>
-        <p>{copy.rectorText}</p>
-
-        <div class="q-profile-list">
-          <article><span>Education</span><strong>UASN, NUS, Harvard, Stanford, MIT, Oxford</strong></article>
-          <article><span>Expertise</span><strong>AI Engineering, Software Engineering, Data Engineering, UI/UX, DKV</strong></article>
-          <article><span>Industry</span><strong>Microsoft, Adobe, Meta, NVIDIA, Bloomberg, Alibaba Cloud, DCI Indonesia</strong></article>
-        </div>
-      </div>
-    </section>
+    <RectorMessage />
 
     <section class="q-centers" id="centers">
       <div class="q-section-head" data-reveal>
@@ -346,6 +329,7 @@ const arcVideoHeroSrc = arcVideoHeroWithBase("/videos/presentarcdev.mp4");
     </section>
   </main>
 </div>
+
 
 
 
