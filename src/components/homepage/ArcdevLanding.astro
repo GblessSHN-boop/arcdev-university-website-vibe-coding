@@ -1,5 +1,22 @@
 ﻿---
 const { lang = "id" } = Astro.props;
+
+const baseUrl = import.meta.env.BASE_URL || "/";
+const withBase = (path) => {
+  if (!path) return path;
+  if (
+    path.startsWith("http") ||
+    path.startsWith("#") ||
+    path.startsWith("mailto:") ||
+    path.startsWith("tel:")
+  ) {
+    return path;
+  }
+
+  const cleanBase = baseUrl.endsWith("/") ? baseUrl : `${baseUrl}/`;
+  const cleanPath = path.startsWith("/") ? path.slice(1) : path;
+  return `${cleanBase}${cleanPath}`;
+};
 const isEn = lang === "en";
 
 const copy = isEn
@@ -117,12 +134,47 @@ const partners = [
   ["Grab", "grab.svg"],
   ["Shopee", "shopee.svg"]
 ];
+
+
+/* ARCDEV_VIDEO_HERO_FINAL_DATA */
+const arcVideoHeroBaseUrl = import.meta.env.BASE_URL || "/";
+const arcVideoHeroWithBase = (path) => {
+  if (!path) return path;
+  if (
+    path.startsWith("http") ||
+    path.startsWith("#") ||
+    path.startsWith("mailto:") ||
+    path.startsWith("tel:")
+  ) {
+    return path;
+  }
+
+  const cleanBase = arcVideoHeroBaseUrl.endsWith("/") ? arcVideoHeroBaseUrl : `${arcVideoHeroBaseUrl}/`;
+  const cleanPath = path.startsWith("/") ? path.slice(1) : path;
+  return `${cleanBase}${cleanPath}`;
+};
+
+const arcVideoHeroIsEn = Astro.url.pathname.includes("/en");
+
+const arcVideoHeroCopy = arcVideoHeroIsEn
+  ? {
+      kicker: "ACADEMIC RESEARCH & CREATIVE DEVELOPMENT",
+      title: "Build Intelligence. Design Experience. Engineer the Future.",
+      lead: "A creative technology ecosystem for software, artificial intelligence, digital design, and real industry projects."
+    }
+  : {
+      kicker: "ACADEMIC RESEARCH & CREATIVE DEVELOPMENT",
+      title: "Build Intelligence. Design Experience. Engineer the Future.",
+      lead: "Ekosistem teknologi kreatif untuk software, artificial intelligence, desain digital, dan proyek industri nyata."
+    };
+
+const arcVideoHeroSrc = arcVideoHeroWithBase("/videos/presentarcdev.mp4");
 ---
 
 <div class="q-page">
   <header class="q-header">
-    <a class="q-brand" href={copy.home} aria-label={copy.brand}>
-      <img src="/images/brand/arcdev-logo.png" alt="ARCDEV logo" />
+    <a class="q-brand" href={withBase(copy.home)} aria-label={copy.brand}>
+      <img src={withBase("/images/brand/arcdev-logo.png")} alt="ARCDEV logo" />
       <span>
         <strong>{copy.brand}</strong>
         <small>{copy.subtitle}</small>
@@ -130,47 +182,48 @@ const partners = [
     </a>
 
     <nav class="q-nav" aria-label="Main navigation">
-      {copy.nav.map(([label, href]) => <a href={href}>{label}</a>)}
+      {copy.nav.map(([label, href]) => <a href={withBase(href)}>{label}</a>)}
     </nav>
 
     <div class="q-actions">
-      <a class="q-lang" href={copy.switchHref}>{copy.switchLabel}</a>
-      <a class="q-apply" href={copy.applyHref}>{copy.applyLabel}</a>
+      <a class="q-lang" href={withBase(copy.switchHref)}>{copy.switchLabel}</a>
+      <a class="q-apply" href={withBase(copy.applyHref)}>{copy.applyLabel}</a>
     </div>
   </header>
 
   <main>
-    <section class="q-video-hero" aria-label="ARCDEV presentation video">
-      <div class="q-video-shell" data-reveal data-interactive-card>
+
+    <section class="q-video-hero q-video-hero-final" data-arcdev-video-hero>
+      <div class="q-video-stage-final">
         <video
-          class="q-presentation-video"
-          src="/videos/presentarcdev.mp4"
+          class="q-video-media-final"
           autoplay
           muted
           loop
           playsinline
-          preload="metadata"
-          poster="/images/brand/arcdev-logo.png"
-        ></video>
+          preload="auto"
+          aria-label="ARCDEV presentation video"
+        >
+          <source src={arcVideoHeroSrc} type="video/mp4" />
+        </video>
 
-        <div class="q-video-overlay">
-          <p class="q-kicker">ARCDEV Presentation</p>
-          <h2>{isEn ? "Watch the ARCDEV university profile." : "Tonton profil Universitas ARCDEV."}</h2>
-          <p>
-            {isEn
-              ? "A visual introduction to ARCDEV as a creative technology university for software, AI, design, and digital industry."
-              : "Pengenalan visual ARCDEV sebagai universitas teknologi kreatif untuk software, AI, desain, dan industri digital."}
-          </p>
+        <div class="q-video-shade-final"></div>
+
+        <div class="q-video-copy-final" data-arcdev-video-copy>
+          <p class="q-video-kicker-final">{arcVideoHeroCopy.kicker}</p>
+          <h1>{arcVideoHeroCopy.title}</h1>
+          <p>{arcVideoHeroCopy.lead}</p>
         </div>
       </div>
     </section>
+
     <section class="q-hero">
       <div class="q-hero-copy" data-reveal>
         <p class="q-kicker">{copy.eyebrow}</p>
         <h1>{copy.title}</h1>
         <p class="q-lead">{copy.lead}</p>
         <div class="q-hero-actions">
-          <a href={isEn ? "/en/faculties" : "/id/fakultas"}>{copy.primary}</a>
+          <a href={withBase(isEn ? "/en/faculties" : "/id/fakultas")}>{copy.primary}</a>
           <a href="#philosophy">{copy.secondary}</a>
         </div>
       </div>
@@ -217,7 +270,7 @@ const partners = [
 
     <section class="q-rector" id="rector">
       <div class="q-rector-photo" data-reveal data-interactive-card>
-        <img src="/images/people/rector-gland-siahaan.png" alt="Rector of ARCDEV University" />
+        <img src={withBase("/images/people/rector-gland-siahaan.png")} alt="Rector of ARCDEV University" />
         <span>Rektorat UARCDEV Gland Siahaan</span>
       </div>
 
@@ -276,7 +329,7 @@ const partners = [
       <div class="q-partner-grid">
         {partners.map(([name, file]) => (
           <article class="q-partner-card" data-reveal data-interactive-card>
-            <img src={`/images/partners/${file}`} alt={`${name} logo`} loading="lazy" />
+            <img src={withBase(`/images/partners/${file}`)} alt={`${name} logo`} loading="lazy" />
             <span>{name}</span>
           </article>
         ))}
@@ -288,9 +341,11 @@ const partners = [
         <p class="q-kicker">Admissions</p>
         <h2>{copy.ctaTitle}</h2>
         <p>{copy.ctaLead}</p>
-        <a href={copy.applyHref}>{copy.applyLabel}</a>
+        <a href={withBase(copy.applyHref)}>{copy.applyLabel}</a>
       </div>
     </section>
   </main>
 </div>
+
+
 

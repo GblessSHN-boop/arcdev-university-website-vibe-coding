@@ -201,3 +201,95 @@ console.log("ARCDEV UI/UX v5 initialized.");
   });
 })();
 // === ARCDEV CLEAN MOTION V9 END ===
+
+/* =========================================================
+   ARCDEV scroll hero refinement v2
+========================================================= */
+
+function initArcdevScrollHero() {
+  const heroes = document.querySelectorAll("[data-arcdev-scroll-hero]");
+  if (!heroes.length) return;
+
+  const updateHeroState = () => {
+    const winH = window.innerHeight || 1;
+
+    heroes.forEach((hero) => {
+      const rect = hero.getBoundingClientRect();
+      const totalScrollable = Math.max(hero.offsetHeight - winH, 1);
+      const progress = Math.min(Math.max((-rect.top) / totalScrollable, 0), 1);
+
+      if (progress > 0.08) {
+        hero.classList.add("is-revealed");
+      } else {
+        hero.classList.remove("is-revealed");
+      }
+    });
+  };
+
+  updateHeroState();
+  window.addEventListener("scroll", updateHeroState, { passive: true });
+  window.addEventListener("resize", updateHeroState);
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initArcdevScrollHero);
+} else {
+  initArcdevScrollHero();
+}
+
+
+/* ARCDEV VIDEO HERO FINAL START */
+
+function initArcdevFinalVideoHero() {
+  const heroes = document.querySelectorAll("[data-arcdev-video-hero]");
+  if (!heroes.length) return;
+
+  const update = () => {
+    const viewportHeight = window.innerHeight || 1;
+
+    heroes.forEach((hero) => {
+      const rect = hero.getBoundingClientRect();
+      const scrollableDistance = Math.max(hero.offsetHeight - viewportHeight, 1);
+      const progress = Math.min(Math.max((-rect.top) / scrollableDistance, 0), 1);
+      const copy = hero.querySelector("[data-arcdev-video-copy]");
+
+      if (progress >= 0.18 && progress < 0.82) {
+        hero.classList.add("is-revealed");
+      } else {
+        hero.classList.remove("is-revealed");
+      }
+
+      if (copy) {
+        if (progress >= 0.76) {
+          copy.classList.add("is-leaving");
+        } else {
+          copy.classList.remove("is-leaving");
+        }
+      }
+    });
+  };
+
+  let ticking = false;
+
+  const requestUpdate = () => {
+    if (ticking) return;
+
+    ticking = true;
+    window.requestAnimationFrame(() => {
+      update();
+      ticking = false;
+    });
+  };
+
+  update();
+  window.addEventListener("scroll", requestUpdate, { passive: true });
+  window.addEventListener("resize", requestUpdate);
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initArcdevFinalVideoHero);
+} else {
+  initArcdevFinalVideoHero();
+}
+
+/* ARCDEV VIDEO HERO FINAL END */

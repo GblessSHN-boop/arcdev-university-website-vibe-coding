@@ -2995,92 +2995,394 @@ body {
 /* === ARCDEV QUALITY DESIGN V9 END === */
 
 
-/* === ARCDEV PRESENTATION VIDEO START === */
 
-.q-video-hero {
-  max-width: var(--q-max);
-  margin: 0 auto;
-  padding: 46px clamp(24px, 4vw, 64px) 0;
-}
 
-.q-video-shell {
+/* =========================================================
+   ARCDEV VIDEO HERO REFINEMENT V2
+========================================================= */
+
+.arcdev-hero-shell {
   position: relative;
-  min-height: clamp(360px, 56vw, 720px);
-  border: 1px solid rgba(75, 31, 166, 0.18);
-  background: #090512;
-  overflow: hidden;
-  box-shadow: 0 34px 90px rgba(15, 23, 42, 0.16);
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 210vh;
+  overflow: clip;
+  background: #050816;
 }
 
-.q-presentation-video {
+.arcdev-hero-stage {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #050816;
+}
+
+.arcdev-hero-video {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  min-height: clamp(360px, 56vw, 720px);
-  display: block;
   object-fit: cover;
-  object-position: center;
+  object-position: center center;
+  transform: scale(1.04);
+  transition: transform 0.45s ease;
+  will-change: transform;
 }
 
-.q-video-shell::after {
-  content: "";
+.arcdev-hero-shell.is-revealed .arcdev-hero-video {
+  transform: scale(1.01);
+}
+
+.arcdev-hero-overlay {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(9, 5, 18, 0.82) 0%, rgba(9, 5, 18, 0.46) 38%, rgba(9, 5, 18, 0.08) 100%),
-    linear-gradient(180deg, rgba(9, 5, 18, 0.10) 0%, rgba(9, 5, 18, 0.48) 100%);
-  pointer-events: none;
+    linear-gradient(180deg, rgba(5, 8, 22, 0.34) 0%, rgba(5, 8, 22, 0.48) 42%, rgba(5, 8, 22, 0.78) 100%),
+    radial-gradient(circle at center, rgba(115, 43, 255, 0.10) 0%, rgba(5, 8, 22, 0.18) 50%, rgba(5, 8, 22, 0.40) 100%);
+  z-index: 1;
 }
 
-.q-video-overlay {
-  position: absolute;
-  left: clamp(26px, 5vw, 72px);
-  bottom: clamp(26px, 5vw, 72px);
+.arcdev-hero-content-wrap {
+  position: relative;
   z-index: 2;
-  max-width: 620px;
-  color: #ffffff;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  padding: clamp(24px, 4vw, 56px);
+  text-align: center;
 }
 
-.q-video-overlay .q-kicker {
-  color: #c7b5ff;
+.arcdev-hero-copy {
+  max-width: 980px;
+  opacity: 0;
+  transform: translateY(42px) scale(0.985);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.q-video-overlay h2 {
+.arcdev-hero-shell.is-revealed .arcdev-hero-copy {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.arcdev-hero-kicker {
+  margin: 0 0 18px;
+  font-size: 0.92rem;
+  font-weight: 900;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: #d2c0ff;
+}
+
+.arcdev-hero-title {
   margin: 0;
-  max-width: 660px;
+  font-size: clamp(2.8rem, 6vw, 6rem);
+  line-height: 0.96;
+  letter-spacing: -0.045em;
+  font-weight: 900;
   color: #ffffff;
-  font-size: clamp(2rem, 4vw, 4.4rem);
-  line-height: 1.08;
-  letter-spacing: -0.04em;
-  font-weight: 850;
+  text-wrap: balance;
 }
 
-.q-video-overlay p {
-  margin: 18px 0 0;
-  max-width: 580px;
-  color: rgba(255, 255, 255, 0.84);
-  font-size: clamp(1rem, 1.2vw, 1.18rem);
-  line-height: 1.72;
+.arcdev-hero-lead {
+  margin: 24px auto 0;
+  max-width: 760px;
+  font-size: clamp(1rem, 1.6vw, 1.18rem);
+  line-height: 1.9;
+  color: rgba(255, 255, 255, 0.86);
+  text-wrap: balance;
 }
 
-@media (max-width: 760px) {
-  .q-video-hero {
-    padding-top: 28px;
-  }
+.arcdev-hero-actions {
+  margin-top: 34px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
 
-  .q-video-shell,
-  .q-presentation-video {
-    min-height: 420px;
-  }
+.arcdev-hero-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 54px;
+  padding: 0 24px;
+  border-radius: 999px;
+  font-size: 0.96rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
 
-  .q-video-shell::after {
-    background: linear-gradient(180deg, rgba(9, 5, 18, 0.10) 0%, rgba(9, 5, 18, 0.82) 100%);
-  }
+.arcdev-hero-btn:hover {
+  transform: translateY(-2px);
+}
 
-  .q-video-overlay {
-    left: 22px;
-    right: 22px;
-    bottom: 28px;
+.arcdev-hero-btn-primary {
+  color: #ffffff;
+  background: linear-gradient(135deg, #6f31ff 0%, #4b1fa6 100%);
+  box-shadow: 0 18px 50px rgba(91, 48, 213, 0.34);
+}
+
+.arcdev-hero-btn-primary:hover {
+  box-shadow: 0 24px 60px rgba(91, 48, 213, 0.45);
+}
+
+.arcdev-hero-btn-secondary {
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+}
+
+.arcdev-hero-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.arcdev-hero-scroll-indicator {
+  position: absolute;
+  left: 50%;
+  bottom: 28px;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: rgba(10, 14, 34, 0.46);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  backdrop-filter: blur(10px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.arcdev-hero-scroll-indicator::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #c9b8ff;
+  box-shadow: 0 0 0 0 rgba(201, 184, 255, 0.7);
+  animation: arcdevHeroPulse 1.8s infinite;
+}
+
+.arcdev-hero-shell.is-revealed .arcdev-hero-scroll-indicator {
+  opacity: 0.3;
+  transform: translateX(-50%) translateY(4px);
+}
+
+@keyframes arcdevHeroPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(201, 184, 255, 0.55);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(201, 184, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(201, 184, 255, 0);
   }
 }
 
-/* === ARCDEV PRESENTATION VIDEO END === */
+/* rapikan spacing awal homepage kalau ada gap container */
+.arcdev-hero-shell + * {
+  margin-top: 0 !important;
+}
+
+@media (max-width: 900px) {
+  .arcdev-hero-shell {
+    height: 190vh;
+  }
+
+  .arcdev-hero-title {
+    font-size: clamp(2.4rem, 10vw, 4.2rem);
+  }
+
+  .arcdev-hero-lead {
+    max-width: 92%;
+    line-height: 1.75;
+  }
+
+  .arcdev-hero-actions {
+    gap: 12px;
+  }
+
+  .arcdev-hero-btn {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 640px) {
+  .arcdev-hero-kicker {
+    letter-spacing: 0.22em;
+    font-size: 0.78rem;
+  }
+
+  .arcdev-hero-scroll-indicator {
+    bottom: 18px;
+    font-size: 0.74rem;
+    padding: 9px 14px;
+  }
+}
+
+
+/* ARCDEV VIDEO HERO FINAL START */
+
+.q-video-hero-final {
+  position: relative;
+  width: 100vw;
+  height: 220vh;
+  margin: 0;
+  margin-left: calc(50% - 50vw);
+  padding: 0;
+  background: #050816;
+  overflow: visible;
+}
+
+.q-video-stage-final {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #050816;
+}
+
+.q-video-media-final {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center center;
+  transform: scale(1.02);
+  filter: brightness(0.82) contrast(1.05) saturate(1.06);
+  will-change: transform, filter;
+  transition:
+    transform 900ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 900ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.q-video-hero-final.is-revealed .q-video-media-final {
+  transform: scale(1);
+  filter: brightness(0.56) contrast(1.08) saturate(1.04);
+}
+
+.q-video-shade-final {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(103, 58, 183, 0.08), transparent 44%),
+    linear-gradient(180deg, rgba(5, 8, 22, 0.08) 0%, rgba(5, 8, 22, 0.22) 45%, rgba(5, 8, 22, 0.50) 100%);
+  opacity: 0.68;
+  transition: opacity 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.q-video-hero-final.is-revealed .q-video-shade-final {
+  opacity: 1;
+}
+
+.q-video-copy-final {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 2;
+  width: min(1080px, calc(100% - 48px));
+  text-align: center;
+  color: #ffffff;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, calc(-50% + 52px)) scale(0.985);
+  filter: blur(10px);
+  transition:
+    opacity 800ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 800ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 800ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.q-video-hero-final.is-revealed .q-video-copy-final {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  filter: blur(0);
+}
+
+.q-video-copy-final.is-leaving {
+  opacity: 0;
+  transform: translate(-50%, calc(-50% - 36px)) scale(0.99);
+  filter: blur(8px);
+}
+
+.q-video-kicker-final {
+  margin: 0 0 22px;
+  font-size: clamp(0.72rem, 1vw, 0.9rem);
+  font-weight: 900;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: rgba(215, 202, 255, 0.94);
+}
+
+.q-video-copy-final h1 {
+  margin: 0 auto;
+  max-width: 1040px;
+  font-size: clamp(3rem, 7vw, 7.2rem);
+  line-height: 0.94;
+  letter-spacing: -0.065em;
+  font-weight: 900;
+  color: #ffffff;
+  text-wrap: balance;
+}
+
+.q-video-copy-final p:last-child {
+  margin: 30px auto 0;
+  max-width: 760px;
+  font-size: clamp(1rem, 1.45vw, 1.25rem);
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.78);
+  text-wrap: balance;
+}
+
+.q-video-hero-final + * {
+  margin-top: 0 !important;
+}
+
+@media (max-width: 900px) {
+  .q-video-hero-final {
+    height: 210vh;
+  }
+
+  .q-video-copy-final {
+    width: min(92%, 720px);
+  }
+
+  .q-video-copy-final h1 {
+    font-size: clamp(2.7rem, 12vw, 4.8rem);
+    line-height: 1;
+  }
+
+  .q-video-copy-final p:last-child {
+    margin-top: 22px;
+    line-height: 1.7;
+  }
+}
+
+/* ARCDEV VIDEO HERO FINAL END */

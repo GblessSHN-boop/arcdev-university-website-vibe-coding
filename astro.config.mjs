@@ -2,7 +2,8 @@
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  site: "https://gblessshn-boop.github.io/arcdev-university-website-vibe-coding",
+  site: "https://gblessshn-boop.github.io",
+  base: "/arcdev-university-website-vibe-coding",
   vite: {
     plugins: [tailwindcss()]
   }

@@ -1,5 +1,22 @@
 ﻿---
 const { page, lang = "id" } = Astro.props;
+
+const baseUrl = import.meta.env.BASE_URL || "/";
+const withBase = (path) => {
+  if (!path) return path;
+  if (
+    path.startsWith("http") ||
+    path.startsWith("#") ||
+    path.startsWith("mailto:") ||
+    path.startsWith("tel:")
+  ) {
+    return path;
+  }
+
+  const cleanBase = baseUrl.endsWith("/") ? baseUrl : `${baseUrl}/`;
+  const cleanPath = path.startsWith("/") ? path.slice(1) : path;
+  return `${cleanBase}${cleanPath}`;
+};
 const isEn = lang === "en";
 const homeHref = isEn ? "/en" : "/id";
 const switchHref = isEn ? "/id" : "/en";
@@ -9,8 +26,8 @@ const admissionHref = isEn ? "/en/admissions" : "/id/penerimaan-mahasiswa-baru";
 
 <div class="q-static">
   <header class="q-header">
-    <a class="q-brand" href={homeHref}>
-      <img src="/images/brand/arcdev-logo.png" alt="ARCDEV logo" />
+    <a class="q-brand" href={withBase(homeHref)}>
+      <img src={withBase("/images/brand/arcdev-logo.png")} alt="ARCDEV logo" />
       <span>
         <strong>{isEn ? "ARCDEV University" : "Universitas ARCDEV"}</strong>
         <small>Creative Technology University</small>
@@ -18,13 +35,13 @@ const admissionHref = isEn ? "/en/admissions" : "/id/penerimaan-mahasiswa-baru";
     </a>
 
     <nav class="q-nav">
-      <a href={homeHref}>{isEn ? "Home" : "Beranda"}</a>
-      <a href={facultyHref}>{isEn ? "Faculties" : "Fakultas"}</a>
-      <a href={admissionHref}>{isEn ? "Admissions" : "PMB"}</a>
+      <a href={withBase(homeHref)}>{isEn ? "Home" : "Beranda"}</a>
+      <a href={withBase(facultyHref)}>{isEn ? "Faculties" : "Fakultas"}</a>
+      <a href={withBase(admissionHref)}>{isEn ? "Admissions" : "PMB"}</a>
     </nav>
 
     <div class="q-actions">
-      <a class="q-lang" href={switchHref}>{isEn ? "ID" : "EN"}</a>
+      <a class="q-lang" href={withBase(switchHref)}>{isEn ? "ID" : "EN"}</a>
     </div>
   </header>
 
@@ -34,7 +51,7 @@ const admissionHref = isEn ? "/en/admissions" : "/id/penerimaan-mahasiswa-baru";
         <p class="q-kicker">{page.eyebrow}</p>
         <h1>{page.title}</h1>
         <p>{page.lead}</p>
-        <a href={page.ctaHref}>{page.cta}</a>
+        <a href={withBase(page.ctaHref)}>{page.cta}</a>
       </div>
 
       <aside data-reveal data-interactive-card>
@@ -55,3 +72,4 @@ const admissionHref = isEn ? "/en/admissions" : "/id/penerimaan-mahasiswa-baru";
     </section>
   </main>
 </div>
+
