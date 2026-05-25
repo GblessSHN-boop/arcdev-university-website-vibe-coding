@@ -1,0 +1,63 @@
+﻿---
+const base = import.meta.env.BASE_URL;
+const isEnglish = Astro.url.pathname.includes("/en");
+
+const copy = isEnglish
+  ? {
+      eyebrow: "RECTOR MESSAGE",
+      title: "Message from the Rector",
+      name: "Gland Siahaan",
+      body: "ARCDEV University is built as a creative technology university that connects software engineering, artificial intelligence, digital design, and real industry projects.",
+      cta: "Read More",
+      href: `${base}en/about`
+    }
+  : {
+      eyebrow: "SAMBUTAN REKTOR",
+      title: "Sambutan Rektor",
+      name: "Gland Siahaan",
+      body: "Universitas ARCDEV Indonesia dibangun sebagai kampus teknologi kreatif yang menghubungkan software engineering, artificial intelligence, desain digital, dan proyek industri nyata.",
+      cta: "Baca Selengkapnya",
+      href: `${base}id/tentang`
+    };
+
+const primaryImage = `${base}images/people/rector-primary.png`;
+const hoverImage = `${base}images/people/rector-hover.png`;
+---
+
+<section id="rector" class="arc-rector-v3" aria-labelledby="arc-rector-title">
+  <div class="container arc-rector-v3__inner">
+    <div class="arc-rector-v3__figure" data-reveal>
+      <div class="arc-rector-v3__photo-stack">
+        <img
+          src={primaryImage}
+          alt="Gland Siahaan"
+          class="arc-rector-v3__photo arc-rector-v3__photo--primary"
+          loading="lazy"
+          decoding="async"
+        />
+        <img
+          src={hoverImage}
+          alt="Gland Siahaan alternate portrait"
+          class="arc-rector-v3__photo arc-rector-v3__photo--hover"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </div>
+
+    <div class="arc-rector-v3__content" data-reveal>
+      <p class="arc-rector-v3__eyebrow">{copy.eyebrow}</p>
+
+      <h2 id="arc-rector-title" class="arc-rector-v3__title">
+        {copy.title}<br />
+        <strong>{copy.name}</strong>
+      </h2>
+
+      <div class="arc-rector-v3__line" aria-hidden="true"></div>
+
+      <p class="arc-rector-v3__text">{copy.body}</p>
+
+      <a href={copy.href} class="arc-rector-v3__link">{copy.cta}</a>
+    </div>
+  </div>
+</section>
